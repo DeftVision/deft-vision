@@ -1,6 +1,8 @@
 # React + Vite
 ![Deploy](https://github.com/DeftVision/deft-web/actions/workflows/deploy.yml/badge.svg
+
 AUTHOR: Gabriel Barrett May 14th, 2025
+This project is intended for the use of Deft Vision LLC only. This is deployed to Amazon Web Services.
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
