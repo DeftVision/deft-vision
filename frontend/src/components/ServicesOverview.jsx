@@ -1,0 +1,92 @@
+import {
+    Box,
+    Container,
+    Typography,
+    Paper,
+    Button,
+} from '@mui/material';
+import CodeIcon from '@mui/icons-material/Code';
+import SearchIcon from '@mui/icons-material/Search';
+import DesignServicesIcon from '@mui/icons-material/DesignServices';
+
+
+import { Link as RouterLink } from 'react-router-dom';
+
+const ServicesOverview = [
+    {
+        icon: <SearchIcon fontSize="large" color="primary" />,
+        title: 'Built-in SEO',
+        description:
+            'We handle the tags, titles, and social metadata that help your site show up — and look good when it’s shared.',
+        link: '/seo'
+    },
+    {
+        icon: <CodeIcon fontSize="large" color="primary" />,
+        title: 'Quick Deployment',
+        description:
+            'A lean, lead-focused one-pager with pro structure and baked-in SEO — ready to launch fast and grow with you.',
+        link: '/services/quick-deploy'
+    },
+    {
+        icon: <DesignServicesIcon fontSize="large" color="primary" />,
+        title: 'Custom SPA',
+        description:
+            'Get a fully designed single-page app tailored to your content, structure, and style. Built from scratch — scalable and client-ready.',
+        link: '/services/custom-spa'
+    }
+
+];
+
+export default function QuickDeploy() {
+    return (
+        <Box id="services" sx={{ py: 8, backgroundColor: 'background.paper' }}>
+            <Container maxWidth="lg">
+                <Typography variant="h2" align="center" gutterBottom>
+                    Services
+                </Typography>
+
+                <Box
+                    sx={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        justifyContent: 'center',
+                        gap: 4,
+                        mt: 4,
+                    }}
+                >
+                    {ServicesOverview.map((service, index) => (
+                        <Paper
+                            key={index}
+                            elevation={2}
+                            sx={{
+                                cursor: 'default',
+                                flex: '1 1 260px',
+                                maxWidth: 320,
+                                p: 4,
+                                textAlign: 'center',
+                                transition: 'all 0.25s ease-in-out',
+                                '&:hover': {
+                                    transform: 'translateY(-4px)',
+                                    boxShadow: 4,
+                                },
+                            }}
+                        >
+                            {service.icon}
+                            <Typography variant="h6" sx={{ mt: 2, mb: 1 }}>
+                                {service.title}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                                {service.description}
+                            </Typography>
+                            {service.link && (
+                                <RouterLink to={service.link} style={{ textDecoration: 'none' }}>
+                                    <Button variant='outlined'>Learn More</Button>
+                                </RouterLink>
+                            )}
+                        </Paper>
+                    ))}
+                </Box>
+            </Container>
+        </Box>
+    );
+}
