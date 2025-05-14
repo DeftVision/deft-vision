@@ -27,12 +27,12 @@ jobs:
         working-directory: frontend
         run: npm run build
 
-      - name: Deploy via SSH
-        env:
-          SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
-        run: |
-          echo "$SSH_KEY" > key.pem
-          chmod 600 key.pem
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
 
-          rsync -avz -e "ssh -i key.pem -o StrictHostKeyChecking=no" \
+      - name: Deploy via rsync
+        run: |
+          rsync -avz -e "ssh -o StrictHostKeyChecking=no" \
             ./frontend/dist/ ec2-user@18.117.43.93:/usr/share/nginx/html/
