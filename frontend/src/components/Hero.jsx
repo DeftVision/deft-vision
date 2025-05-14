@@ -1,11 +1,14 @@
 import { Box, Typography, Button, Container } from '@mui/material';
+import heroImage from '../assets/hero.png';
 
 export default function Hero() {
+    console.log("Hero component loaded");
+
     return (
         <Box
             sx={{
                 minHeight: '60vh',
-                backgroundImage: 'url(/images/hero.png)',
+                backgroundImage: `url(${heroImage})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
