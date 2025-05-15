@@ -1,5 +1,5 @@
 import { Box, Stack, Typography, Link, Divider } from '@mui/material';
-import DeftLogo from '../assets/DeftVisionSymbol.svg?react';
+import DeftLogo from '../assets/DeftVisionSymbol-old.svg?react';
 
 function Footer() {
     return (
