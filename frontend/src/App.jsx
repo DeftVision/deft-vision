@@ -3,6 +3,9 @@ import BackToTop from './layouts/BackToTop.jsx';
 import { Hero, Service, Portfolio, Contact, ProductComparison, Footer } from './components/index';
 import ScrollToHash from './components/ScrollToHash'; // ✅ Make sure this file exists
 
+
+
+
 function App() {
     return (
         <Layout>
