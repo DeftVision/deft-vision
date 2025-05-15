@@ -14,10 +14,10 @@ function Footer() {
             }}
         >
             <Stack spacing={3} alignItems="center" textAlign="center">
-                <DeftLogo style={{ width: 48, height: 48 }} />
+                <DeftLogo style={{ width: 48, height: 48, filter: 'drop-shadow( 0px 1px 2px rgba(0, 0, 0, 0.4))' }} />
 
                 <Typography variant="subtitle1">
-                    Professional websites. Built fast. Priced right.
+                    Professional SPAs. Built fast. Priced right.
                 </Typography>
 
                 <Divider sx={{ width: '100%', maxWidth: 400 }} />
