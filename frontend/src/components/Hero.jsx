@@ -1,3 +1,4 @@
+// components/Hero.jsx
 import { Box, Typography, Button, Container } from '@mui/material';
 import { useEffect, useRef, useState } from 'react';
 
@@ -33,19 +34,34 @@ export default function Hero() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 position: 'relative',
-                textAlign: 'center',
                 px: 2,
             }}
         >
+            {/* Enhanced overlay with blur */}
             <Box
                 sx={{
                     position: 'absolute',
                     inset: 0,
-                    background: 'linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7))',
+                    background: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8))',
+                    backdropFilter: 'blur(2px)',
                     zIndex: 1,
                 }}
             />
-            <Container maxWidth="md" sx={{ position: 'relative', zIndex: 2 }}>
+
+            {/* Frosted glass container for text */}
+            <Container
+                maxWidth="md"
+                sx={{
+                    position: 'relative',
+                    zIndex: 2,
+                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                    backdropFilter: 'blur(6px)',
+                    borderRadius: 2,
+                    p: { xs: 3, sm: 4 },
+                    boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
+                    textAlign: 'center',
+                }}
+            >
                 <Typography
                     variant="h1"
                     gutterBottom
@@ -53,7 +69,9 @@ export default function Hero() {
                     sx={{
                         color: 'white',
                         fontWeight: 600,
+                        textShadow: '1px 1px 4px rgba(0,0,0,0.7)',
                         mb: 2,
+                        fontSize: { xs: '2.25rem', sm: '3rem', md: '4rem' },
                     }}
                 >
                     Websites that work like apps.
@@ -64,6 +82,7 @@ export default function Hero() {
                     sx={{
                         color: 'white',
                         fontWeight: 300,
+                        textShadow: '1px 1px 3px rgba(0,0,0,0.6)',
                         mb: 4,
                     }}
                 >
