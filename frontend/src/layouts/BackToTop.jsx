@@ -6,7 +6,14 @@ export default function BackToTop() {
 
     const handleClick = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Clear hash fragment like #contact
+        if (window.history.pushState) {
+            const url = window.location.href.split('#')[0];
+            window.history.pushState({}, '', url);
+        }
     };
+
 
     return (
         <Zoom in={trigger}>

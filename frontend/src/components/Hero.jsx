@@ -1,9 +1,28 @@
 import { Box, Typography, Button, Container } from '@mui/material';
-
+import { useEffect, useRef, useState } from 'react';
 
 export default function Hero() {
+    const heroRef = useRef(null);
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setVisible(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.4 }
+        );
+
+        if (heroRef.current) observer.observe(heroRef.current);
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <Box
+            ref={heroRef}
             sx={{
                 minHeight: '60vh',
                 backgroundImage: 'url(/images/hero.webp)',
@@ -18,7 +37,6 @@ export default function Hero() {
                 px: 2,
             }}
         >
-            {/* Gradient Overlay */}
             <Box
                 sx={{
                     position: 'absolute',
@@ -27,27 +45,25 @@ export default function Hero() {
                     zIndex: 1,
                 }}
             />
-
-            {/* Content */}
             <Container maxWidth="md" sx={{ position: 'relative', zIndex: 2 }}>
                 <Typography
                     variant="h1"
+                    gutterBottom
+                    className={`fade-in-up ${visible ? 'visible delay-0' : ''}`}
                     sx={{
                         color: 'white',
                         fontWeight: 600,
-                        textShadow: '0 2px 8px rgba(0, 0, 0, 0.5)',
                         mb: 2,
                     }}
-                    gutterBottom
                 >
                     Websites that work like apps.
                 </Typography>
                 <Typography
                     variant="h5"
+                    className={`fade-in-up ${visible ? 'visible delay-1' : ''}`}
                     sx={{
                         color: 'white',
                         fontWeight: 300,
-                        textShadow: '0 1px 4px rgba(0, 0, 0, 0.4)',
                         mb: 4,
                     }}
                 >
@@ -56,6 +72,7 @@ export default function Hero() {
                 <Button
                     variant="contained"
                     size="large"
+                    className={`fade-in-up ${visible ? 'visible delay-2' : ''}`}
                     sx={{
                         backgroundColor: '#3A6EA5',
                         color: '#fff',
