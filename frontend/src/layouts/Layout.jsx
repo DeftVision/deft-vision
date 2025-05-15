@@ -1,5 +1,6 @@
+// layouts/Layout.jsx
 import { useState } from 'react';
-import { useScrollTrigger } from '@mui/material';
+import { Divider, useScrollTrigger } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import {
     AppBar,
@@ -18,7 +19,7 @@ import {
     Button,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import DeftLogo from '../assets/DeftVisionSymbol.svg?react';
+import DeftLogo from '../assets/DeftVisionSymbol-old.svg?react';
 
 function HideOnScroll({ children }) {
     const trigger = useScrollTrigger();
@@ -41,9 +42,8 @@ export default function Layout({ children }) {
     const [mobileOpen, setMobileOpen] = useState(false);
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-    
-    const navigate = useNavigate();
 
+    const navigate = useNavigate();
 
     const handleDrawerToggle = () => {
         setMobileOpen((prev) => !prev);
@@ -51,19 +51,17 @@ export default function Layout({ children }) {
 
     const handleNavClick = (href, isAnchor) => {
         if (isAnchor) {
-            navigate(`/${href}`); // This sets the route + hash (e.g. /#services)
+            navigate(`/${href}`);
         } else {
-            navigate(href); // Normal page route
+            navigate(href);
         }
     };
 
-
     const drawer = (
         <Box sx={{ textAlign: 'center', py: 3 }}>
-            <DeftLogo style={{ width: 40, height: 40, marginBottom: 8 }} />
-            <Typography variant="h6" sx={{ mb: 3 }}>
-                Deft Vision
-            </Typography>
+            <Box sx={{ width: 40, height: 40, margin: '0 auto 16px', filter: 'drop-shadow( 0px 1px 2px rgba(0, 0, 0, 0.4))' }}>
+                <DeftLogo style={{ width: '100%', height: '100%' }} />
+            </Box>
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item.label} disablePadding>
@@ -87,8 +85,18 @@ export default function Layout({ children }) {
     return (
         <>
             <HideOnScroll>
-                <AppBar position="sticky" color="primary" elevation={1}>
-                    <Toolbar sx={{ position: 'relative', minHeight: 64 }}>
+                <AppBar
+                    position="sticky"
+                    color="primary"
+                    elevation={1}
+                >
+                    <Toolbar
+                        sx={{
+                            position: 'relative',
+                            minHeight: 64,
+
+                        }}
+                    >
                         {isMobile && (
                             <IconButton
                                 color="inherit"
@@ -101,7 +109,6 @@ export default function Layout({ children }) {
                             </IconButton>
                         )}
 
-                        {/* Centered brand */}
                         <Typography
                             variant="h6"
                             noWrap
@@ -109,6 +116,11 @@ export default function Layout({ children }) {
                                 position: 'absolute',
                                 left: '50%',
                                 transform: 'translateX(-50%)',
+                                fontFamily: 'Poppins, sans-serif',
+                                fontWeight: 600,
+                                letterSpacing: '0.5px',
+                                fontSize: '1.25rem',
+                                color: '#F2F2F2',
                                 pointerEvents: 'none',
                             }}
                         >
