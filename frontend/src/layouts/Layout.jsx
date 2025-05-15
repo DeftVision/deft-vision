@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useScrollTrigger } from '@mui/material';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import {
     AppBar,
     Box,
@@ -41,10 +41,9 @@ export default function Layout({ children }) {
     const [mobileOpen, setMobileOpen] = useState(false);
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-
-    const location = useLocation();
+    
     const navigate = useNavigate();
-    const isHome = location.pathname === '/';
+
 
     const handleDrawerToggle = () => {
         setMobileOpen((prev) => !prev);
