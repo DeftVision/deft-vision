@@ -49,7 +49,7 @@ export const ThemeContextProvider = ({ children }) => {
             components: {
                 MuiButton: {
                     defaultProps: {
-                        variant: 'contained',
+                        variant: 'text',
                         color: 'primary',
                     },
                     styleOverrides: {
