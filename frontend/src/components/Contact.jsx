@@ -66,7 +66,7 @@ function Contact() {
                                 />
                             </Stack>
                             <Button type="submit" variant="contained" disabled={isSending} sx={{ mt: 3, mb: 3 }}>
-                                {isSending ? 'Sending...' : 'Let\'s Go!'}
+                                {isSending ? 'Sending...' : 'I\'m Ready!'}
                             </Button>
                         </Box>
                     </Stack>

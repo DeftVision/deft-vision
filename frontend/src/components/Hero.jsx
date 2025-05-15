@@ -1,11 +1,12 @@
 import { Box, Typography, Button, Container } from '@mui/material';
 
+
 export default function Hero() {
     return (
         <Box
             sx={{
                 minHeight: '60vh',
-                backgroundImage: 'url(/images/hero.png)',
+                backgroundImage: 'url(/images/hero.webp)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 backgroundRepeat: 'no-repeat',
