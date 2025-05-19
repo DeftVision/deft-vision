@@ -29,9 +29,9 @@ function Footer() {
                     <Link href="/privacy" underline="hover" color="inherit">
                         Privacy Policy
                     </Link>
-                    <Link href="/faq" target="_blank" underline="hover" color="inherit">
+                   {/* <Link href="/faq" target="_blank" underline="hover" color="inherit">
                         FAQ
-                    </Link>
+                    </Link>*/}
                 </Stack>
 
 
