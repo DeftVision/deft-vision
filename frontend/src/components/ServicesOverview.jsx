@@ -22,9 +22,9 @@ const ServicesOverview = [
     },
     {
         icon: <CodeIcon fontSize="large" color="primary" />,
-        title: 'Quick Deployment',
+        title: 'Business-Ready SPA',
         description:
-            'A lean, lead-focused one-pager with pro structure and baked-in SEO — ready to launch fast and grow with you.',
+            'A lean, lead-focused frontend app — mobile-ready, SEO-optimized, and built to scale with your business.',
         link: '/services/quick-deploy'
     },
     {
