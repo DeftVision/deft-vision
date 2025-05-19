@@ -6,7 +6,7 @@ import {
     Button,
 } from '@mui/material';
 import CodeIcon from '@mui/icons-material/Code';
-import SearchIcon from '@mui/icons-material/Search';
+import LockIcon from '@mui/icons-material/Lock';
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
 
 
@@ -14,7 +14,7 @@ import { Link as RouterLink } from 'react-router-dom';
 
 const ServicesOverview = [
     {
-        icon: <SearchIcon fontSize="large" color="primary" />,
+        icon: <LockIcon fontSize="large" color="primary" />,
         title: 'Client Portal App',
         description:
             'Secure login. Content management. Built for teams or professional services.',
