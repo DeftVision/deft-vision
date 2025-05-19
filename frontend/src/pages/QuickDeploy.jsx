@@ -9,10 +9,10 @@ const features = [
     "SEO-ready and mobile-first",
     "Contact form with email notifications",
     "1 round of updates",
-    "Optional 30-min Zoom kickoff",
+    "Optional 30-min kickoff call",
     "Delivered via GitHub (you own the code)",
     "Support doc + walkthrough",
-    "Your choice of hosting site - free options available",
+    "Your choice of hosting provider (free options available)",
 ];
 
 export default function QuickDeploy() {
