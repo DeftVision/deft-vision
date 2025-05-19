@@ -15,23 +15,23 @@ import { Link as RouterLink } from 'react-router-dom';
 const ServicesOverview = [
     {
         icon: <SearchIcon fontSize="large" color="primary" />,
-        title: 'Built-in SEO',
+        title: 'Client Portal App',
         description:
-            'We handle the tags, titles, and social metadata that help your site show up — and look good when it’s shared.',
+            'Secure login. Content management. Built for teams or professional services.',
         link: '/seo'
     },
     {
         icon: <CodeIcon fontSize="large" color="primary" />,
-        title: 'Quick Deployment',
+        title: 'Business-Ready SPA',
         description:
-            'A lean, lead-focused one-pager with pro structure and baked-in SEO — ready to launch fast and grow with you.',
+            'A fast, lead-focused web app that\'s mobile friendly, SEO ready, and built to grow with your business.',
         link: '/services/quick-deploy'
     },
     {
         icon: <DesignServicesIcon fontSize="large" color="primary" />,
-        title: 'Custom SPA',
+        title: 'Maintenance Service Plan',
         description:
-            'Get a fully designed single-page app tailored to your content, structure, and style. Built from scratch — scalable and client-ready.',
+            'Keep your site fresh — we’ll handle content changes and tech updates.',
         link: '/services/custom-spa'
     }
 
@@ -42,7 +42,7 @@ export default function QuickDeploy() {
         <Box id="services" sx={{ py: 8, backgroundColor: 'background.paper' }}>
             <Container maxWidth="lg">
                 <Typography variant="h2" align="center" gutterBottom>
-                    Services
+                    Launch Your Site
                 </Typography>
 
                 <Box

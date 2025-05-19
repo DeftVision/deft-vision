@@ -86,7 +86,7 @@ export default function Hero() {
                         mb: 4,
                     }}
                 >
-                    Built to bring in leads. Structured to grow with your business.
+                    Built to grow with your business.
                 </Typography>
                 <Button
                     variant="contained"
