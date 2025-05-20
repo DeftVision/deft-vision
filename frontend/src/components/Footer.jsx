@@ -1,5 +1,5 @@
 import { Box, Stack, Typography, Link, Divider } from '@mui/material';
-import DeftLogo from '../assets/DeftVisionSymbol-old.svg?react';
+import DeftLogo from '../assets/BlueDeftCircle.svg?react';
 
 function Footer() {
     return (
@@ -14,7 +14,18 @@ function Footer() {
             }}
         >
             <Stack spacing={3} alignItems="center" textAlign="center">
-                <DeftLogo style={{ width: 48, height: 48, filter: 'drop-shadow( 0px 1px 2px rgba(0, 0, 0, 0.4))' }} />
+                <Box
+                    component={DeftLogo}
+                    sx={{
+                        width: 64,
+                        height: 64,
+                        mx: 'auto',
+                        my: 2,
+                        display: 'block',
+                    }}
+                />
+
+
 
                 <Typography variant="subtitle1">
                     Professional SPAs. Built fast. Priced right.

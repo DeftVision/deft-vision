@@ -29,7 +29,7 @@ export const ThemeContextProvider = ({ children }) => {
                 },
             },
             typography: {
-                fontFamily: 'Roboto, sans-serif',
+                fontFamily: 'Inter, sans-serif',
                 h1: {
                     fontWeight: 600,
                     fontSize: '3rem',
