@@ -11,7 +11,7 @@ export default function Terms() {
         {
             title: '1. Scope of Service',
             content:
-                'These terms apply only to Quick Deploy and Custom SPA frontend projects. They do not cover full stack applications, HIPAA-compliant systems, or AWS-hosted backend deployments.',
+                'These terms apply only to Business-Ready and Custom SPA frontend projects. They do not cover full stack applications, HIPAA-compliant systems, or AWS-hosted backend deployments.',
         },
         {
             title: '2. Ownership',
@@ -21,12 +21,12 @@ export default function Terms() {
         {
             title: '3. Revisions',
             content:
-                'Quick Deploy projects include one round of revisions after delivery. Revisions cover text, color, and logo swaps only — no new features. Custom SPAs follow the same revision rule unless otherwise agreed.',
+                'Business-Ready projects include one round of revisions after delivery. Revisions cover text, color, and logo swaps only — no new features. Custom SPAs follow the same revision rule unless otherwise agreed.',
         },
         {
             title: '4. Timeline',
             content:
-                'Quick Deploy projects typically complete within 7–10 business days, starting from the scheduled project date. Delays caused by customer response time may extend the timeline.',
+                'Business-Ready projects typically complete within 7–10 business days, starting from the scheduled project date. Delays caused by customer response time may extend the timeline.',
         },
         {
             title: '5. Deployment & Hosting',
@@ -68,7 +68,7 @@ export default function Terms() {
                     <br /><br />
                     For non-bug support — including help with updates, hosting changes, or troubleshooting unrelated to your original project — support is billed at $100/hour with a 30-minute minimum.
                     <br /><br />
-                    Quick Deploy clients may optionally subscribe to a support retainer for $10/month. This includes priority support and discounted hourly billing for approved changes or assistance.
+                    Business-Ready clients may optionally subscribe to a support retainer for $10/month. This includes priority support and discounted hourly billing for approved changes or assistance.
                     <br /><br />
                     Deft Vision does not support issues caused by third-party services, hosting providers, or future changes to frameworks, libraries, or browser behavior. Compatibility issues that arise due to deprecated tools or software updates may require billable code changes.
                 </>

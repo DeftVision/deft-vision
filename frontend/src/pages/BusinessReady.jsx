@@ -15,7 +15,7 @@ const features = [
     "Your choice of hosting provider (free options available)",
 ];
 
-export default function QuickDeploy() {
+export default function BusinessReady() {
     return (
         <Layout>
             <Container maxWidth="md" sx={{ py: 10 }}>
@@ -24,7 +24,7 @@ export default function QuickDeploy() {
                     {/* Hero */}
                     <Stack spacing={2}>
                         <Typography variant="h3" fontWeight={600}>
-                            Quick Deploy SPA
+                            Business-Ready SPA
                         </Typography>
                         <Typography variant="subtitle1" color="text.secondary" maxWidth="sm" mx="auto">
                             Get a real frontend app — fast, mobile-ready, and built to grow with your business.
@@ -67,7 +67,7 @@ export default function QuickDeploy() {
                             Estimated Timeline
                         </Typography>
                         <Typography variant="body2" color="text.secondary">
-                            Most Quick Deploy projects are completed in 7–10 business days, depending on content and response time.
+                            Most Business-Ready projects are completed in 7–10 business days, depending on content and response time.
                         </Typography>
                     </Stack>
 
