@@ -9,7 +9,7 @@ function Footer() {
                 backgroundColor: '#FAFAFA',
                 color: '#212121',
                 px: 4,
-                py: 6,
+                py: 4,
                 borderTop: '1px solid #E0E0E0',
             }}
         >
@@ -40,9 +40,6 @@ function Footer() {
                     <Link href="/privacy" underline="hover" color="inherit">
                         Privacy Policy
                     </Link>
-                   {/* <Link href="/faq" target="_blank" underline="hover" color="inherit">
-                        FAQ
-                    </Link>*/}
                 </Stack>
 
 
