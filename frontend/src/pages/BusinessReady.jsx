@@ -43,9 +43,11 @@ export default function BusinessReady() {
                         <Typography variant="subtitle1" color="text.secondary" maxWidth="sm" mx="auto">
                             A real frontend web app — built fast, mobile-ready, and yours forever.
                         </Typography>
-                        <Button variant="contained" href="#contact">
-                            Start My Project
-                        </Button>
+                        <Box>
+                            <Button variant="contained" size='large' href="/#contact">
+                                Start My Project
+                            </Button>
+                        </Box>
                     </Stack>
 
                     {/* Features */}
