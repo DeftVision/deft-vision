@@ -18,21 +18,21 @@ const ServicesOverview = [
         title: 'Client Portal App',
         description:
             'Secure login. Content management. Built for teams or professional services.',
-        link: '/seo'
+        link: '/'
     },
     {
         icon: <CodeIcon fontSize="large" color="primary" />,
         title: 'Business-Ready SPA',
         description:
             'A fast, lead-focused web app that\'s mobile friendly, SEO ready, and built to grow with your business.',
-        link: '/services/quick-deploy'
+        link: '/services/business-ready'
     },
     {
         icon: <DesignServicesIcon fontSize="large" color="primary" />,
         title: 'Maintenance Service Plan',
         description:
             'Keep your site fresh — we’ll handle content changes and tech updates.',
-        link: '/services/custom-spa'
+        link: '/'
     }
 
 ];
