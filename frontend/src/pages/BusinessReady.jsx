@@ -38,7 +38,7 @@ export default function BusinessReady() {
                     {/* Hero */}
                     <Stack spacing={2}>
                         <Typography variant="h3" fontWeight={600}>
-                            Business-Ready SPA
+                            Business Web App
                         </Typography>
                         <Typography variant="subtitle1" color="text.secondary" maxWidth="sm" mx="auto">
                             A real frontend web app — built fast, mobile-ready, and yours forever.

@@ -28,7 +28,7 @@ function Footer() {
 
 
                 <Typography variant="subtitle1">
-                    Professional SPAs. Built fast. Priced right.
+                    Professional Web Apps.
                 </Typography>
 
                 <Divider sx={{ width: '100%', maxWidth: 400 }} />
