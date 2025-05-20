@@ -1,6 +1,5 @@
-// layouts/Layout.jsx
 import { useState } from 'react';
-import { Divider, useScrollTrigger } from '@mui/material';
+import { useScrollTrigger } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import {
     AppBar,
@@ -19,7 +18,7 @@ import {
     Button,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import DeftLogo from '../assets/DeftVisionSymbol-old.svg?react';
+import DeftLogo from '../assets/GrayDeftCircle.svg?react';
 
 function HideOnScroll({ children }) {
     const trigger = useScrollTrigger();
@@ -59,9 +58,17 @@ export default function Layout({ children }) {
 
     const drawer = (
         <Box sx={{ textAlign: 'center', py: 3 }}>
-            <Box sx={{ width: 40, height: 40, margin: '0 auto 16px', filter: 'drop-shadow( 0px 1px 2px rgba(0, 0, 0, 0.4))' }}>
-                <DeftLogo style={{ width: '100%', height: '100%' }} />
-            </Box>
+            <Box
+                component={DeftLogo}
+                sx={{
+                    width: 64,
+                    height: 64,
+                    mx: 'auto',
+                    my: 2,
+                    display: 'block',
+                }}
+            />
+
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item.label} disablePadding>
@@ -94,7 +101,6 @@ export default function Layout({ children }) {
                         sx={{
                             position: 'relative',
                             minHeight: 64,
-
                         }}
                     >
                         {isMobile && (
@@ -109,23 +115,39 @@ export default function Layout({ children }) {
                             </IconButton>
                         )}
 
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            sx={{
-                                position: 'absolute',
-                                left: '50%',
-                                transform: 'translateX(-50%)',
-                                fontFamily: 'Poppins, sans-serif',
-                                fontWeight: 600,
-                                letterSpacing: '0.5px',
-                                fontSize: '1.25rem',
-                                color: '#F2F2F2',
-                                pointerEvents: 'none',
-                            }}
-                        >
-                            Deft Vision
-                        </Typography>
+                        <Stack direction="row" alignItems="center" spacing={1}>
+                            <Box
+                                component={DeftLogo}
+                                sx={{
+                                    width: 48,
+                                    height: 48,
+                                    display: 'block',
+                                    mx: 'auto',
+                                    animation: 'flipY 1.2s ease-out 1',
+                                    transformStyle: 'preserve-3d',
+                                    position: 'absolute',
+                                    left: '50%',
+                                    '@keyframes flipY': {
+                                        from: { transform: 'rotateY(0deg)' },
+                                        to: { transform: 'rotateY(360deg)' },
+                                    },
+                                }}
+                            />
+                            <Typography
+                                variant="h6"
+                                noWrap
+                                sx={{
+                                    display: { xs: 'none', md: 'block' },
+                                    fontFamily: 'Poppins, sans-serif',
+                                    fontWeight: 600,
+                                    letterSpacing: '0.5px',
+                                    fontSize: '1.25rem',
+                                    color: '#F2F2F2',
+                                }}
+                            >
+                                Deft Vision
+                            </Typography>
+                        </Stack>
 
                         {!isMobile && (
                             <Box sx={{ marginLeft: 'auto', zIndex: 2 }}>
