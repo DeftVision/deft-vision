@@ -22,7 +22,7 @@ const ServicesOverview = [
     },
     {
         icon: <CodeIcon fontSize="large" color="primary" />,
-        title: 'Business-Ready SPA',
+        title: 'Business Web App',
         description:
             'A fast, lead-focused web app that\'s mobile friendly, SEO ready, and built to grow with your business.',
         link: '/services/business-ready'
