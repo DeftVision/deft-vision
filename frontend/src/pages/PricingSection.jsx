@@ -28,7 +28,7 @@ export default function PricingSection() {
                 <Typography variant="body1">This offer ends <strong>August 1</strong> and won’t be extended.</Typography>
             </Stack>
 
-            <Button variant="contained" size="large">
+            <Button variant="contained" href="/#contact">
                 Start My Project
             </Button>
         </Box>
