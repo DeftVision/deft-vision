@@ -24,10 +24,10 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies
+      - name: Install dependencies (legacy-peer-deps for React 19)
         working-directory: frontend
-        run: npm ci
-
+        run: npm install --legacy-peer-deps
+            
       - name: Build project
         working-directory: frontend
         run: npm run build
