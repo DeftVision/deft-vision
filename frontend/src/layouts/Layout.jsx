@@ -18,7 +18,8 @@ import {
     Button,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import DeftLogo from '../assets/GrayDeftCircle.svg?react';
+import DeftLogo from '../assets/DynamicDeftLogo.svg?react';
+
 
 function HideOnScroll({ children }) {
     const trigger = useScrollTrigger();
@@ -119,6 +120,7 @@ export default function Layout({ children }) {
                             <Box
                                 component={DeftLogo}
                                 sx={{
+                                    color: '#D3DCE4',
                                     width: 48,
                                     height: 48,
                                     display: 'block',

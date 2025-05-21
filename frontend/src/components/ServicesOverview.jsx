@@ -15,7 +15,7 @@ import { Link as RouterLink } from 'react-router-dom';
 const ServicesOverview = [
     {
         icon: <SchoolIcon fontSize="large" color="primary" />,
-        title: 'Deft Info',
+        title: 'Deft Vision\'s Guide',
         description:
             'Not sure where to start? Let\'s figure out what you need now and where you want to be.',
         link: '/services/deft-guide'
