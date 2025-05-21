@@ -1,5 +1,3 @@
-
-# .github/workflows/deploy-rsync.yml
 name: Deploy Frontend with Rsync to EC2
 
 on:
@@ -25,9 +23,9 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install Dependencies
+      - name: Install Dependencies (with legacy peer deps)
         working-directory: ./frontend
-        run: npm ci
+        run: npm install --legacy-peer-deps
 
       - name: Build Vite App
         working-directory: ./frontend
