@@ -1,5 +1,5 @@
 import { Box, Stack, Typography, Link, Divider } from '@mui/material';
-import DeftLogo from '../assets/BlueDeftCircle.svg?react';
+import DynamicDeftLogo from '../assets/DynamicDeftLogo.svg?react';
 
 function Footer() {
     return (
@@ -15,7 +15,7 @@ function Footer() {
         >
             <Stack spacing={3} alignItems="center" textAlign="center">
                 <Box
-                    component={DeftLogo}
+                    component={DynamicDeftLogo}
                     sx={{
                         width: 64,
                         height: 64,
