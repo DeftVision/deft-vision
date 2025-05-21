@@ -3,6 +3,7 @@ import {Box, Button, Container, Stack, Typography} from '@mui/material';
 import {Footer} from '../components/index.js'
 import PricingSection from './PricingSection'
 import BackToTop from '../layouts/BackToTop.jsx';
+import {Helmet} from "react-helmet-async";
 
 const features = [
     {
@@ -28,7 +29,7 @@ const features = [
 ];
 
 
-export default function BusinessReady() {
+export default function BusinessWebApp() {
     return (
         <>
             <Helmet>

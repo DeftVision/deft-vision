@@ -6,7 +6,7 @@ import {
     Button,
 } from '@mui/material';
 import CodeIcon from '@mui/icons-material/Code';
-import LockIcon from '@mui/icons-material/Lock';
+import SchoolIcon from '@mui/icons-material/School';
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
 
 
@@ -14,18 +14,18 @@ import { Link as RouterLink } from 'react-router-dom';
 
 const ServicesOverview = [
     {
-        icon: <LockIcon fontSize="large" color="primary" />,
-        title: 'Client Portal App',
+        icon: <SchoolIcon fontSize="large" color="primary" />,
+        title: 'Deft Info',
         description:
-            'Secure login. Content management. Built for teams or professional services.',
-        link: '/'
+            'Not sure where to start? Let\'s figure out what you need now and where you want to be.',
+        link: '/services/deft-guide'
     },
     {
         icon: <CodeIcon fontSize="large" color="primary" />,
         title: 'Business Web App',
         description:
             'A fast, lead-focused web app that\'s mobile friendly, SEO ready, and built to grow with your business.',
-        link: '/services/business-ready'
+        link: '/services/business-web-app'
     },
     {
         icon: <DesignServicesIcon fontSize="large" color="primary" />,
@@ -37,7 +37,7 @@ const ServicesOverview = [
 
 ];
 
-export default function QuickDeploy() {
+export default function Services() {
     return (
         <Box id="services" sx={{ py: 8, backgroundColor: 'background.paper' }}>
             <Container maxWidth="lg">
