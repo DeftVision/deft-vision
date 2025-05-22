@@ -7,7 +7,7 @@ import { Footer } from '../components/index.js';
 const topics = [
     {
         title: "What Do You Actually Need Online?",
-        path: "/guide/what-you-need-online",
+        path: "/guide/what-you-need-to-get-online",
     },
     {
         title: "How to Launch Smart (and What Happens After)",

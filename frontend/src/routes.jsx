@@ -19,7 +19,7 @@ export default function AppRoutes() {
             <Route path="/" element={<App />} />
             <Route path="/services/business-web-app" element={<BusinessWebApp /> } />
             <Route path="/services/deft-guide" element={<DeftGuide /> } />
-            <Route path="/guide/what-you-need-online" element={<WhatYouNeedToGetOnline />} />
+            <Route path="/guide/what-you-need-to-get-online" element={<WhatYouNeedToGetOnline />} />
             <Route path="/guide/launching-smart" element={<LaunchingSmart />} />
             <Route path="/guide/understanding-your-build" element={<UnderstandingYourBuild />} />
             <Route path="/guide/code-ownership-and-delivery" element={<CodeOwnershipAndDelivery />} />
