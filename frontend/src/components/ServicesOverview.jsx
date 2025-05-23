@@ -13,27 +13,27 @@ import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import { Link as RouterLink } from 'react-router-dom';
 
 const ServicesOverview = [
-    {
-        icon: <SchoolIcon fontSize="large" color="primary" />,
-        title: 'Deft Vision\'s Guide',
-        description:
-            'Not sure where to start? Let\'s figure out what you need now and where you want to be.',
-        link: '/services/deft-guide'
-    },
+    // {
+    //     icon: <SchoolIcon fontSize="large" color="primary" />,
+    //     title: 'Deft Vision\'s Guide',
+    //     description:
+    //         'Not sure where to start? Let\'s figure out what you need now and where you want to be.',
+    //     link: '/services/deft-guide'
+    // },
     {
         icon: <CodeIcon fontSize="large" color="primary" />,
         title: 'Business Web App',
         description:
             'A fast, lead-focused web app that\'s mobile friendly, SEO ready, and built to grow with your business.',
         link: '/services/business-web-app'
-    },
-    {
-        icon: <DesignServicesIcon fontSize="large" color="primary" />,
-        title: 'Maintenance Service Plan',
-        description:
-            'Keep your site fresh — we’ll handle content changes and tech updates.',
-        link: '/'
-    }
+     },
+    // {
+    //     icon: <DesignServicesIcon fontSize="large" color="primary" />,
+    //     title: 'Maintenance Service Plan',
+    //     description:
+    //         'Keep your site fresh — we’ll handle content changes and tech updates.',
+    //     link: '/'
+    // }
 
 ];
 
