@@ -9,11 +9,11 @@ export default function WhatYouNeedOnline() {
             <Container maxWidth="md" sx={{ py: 10, mb: 8 }}>
                 <Stack spacing={6}>
                     <Typography variant="h3" fontWeight={600}>
-                        What Do You Actually Need Online?
+                        What Kind of Online Presence Makes Sense for You?
                     </Typography>
 
                     <Typography variant="subtitle1" color="text.secondary">
-                        Not everyone needs a full site or app right away. Here’s how to figure out what fits your business today — and what you can grow into later.
+                        You don’t need a full site or app to look professional. Start with what supports your goals right now.
                     </Typography>
 
                     <Stack spacing={6} divider={<Divider />}>
@@ -23,7 +23,7 @@ export default function WhatYouNeedOnline() {
                                 Start with your goal
                             </Typography>
                             <Typography>
-                                Are you trying to look legit? Get booked? Replace back-and-forth DMs? Different goals call for different solutions.
+                                What do you want your site to do? Get booked? Collect leads? Look professional and build trust? Your goal should drive what kind of setup makes sense.
                             </Typography>
                         </Box>
 
@@ -33,9 +33,9 @@ export default function WhatYouNeedOnline() {
                                 Three types of online presence
                             </Typography>
                             <Stack spacing={1.5} sx={{ pl: 1 }}>
-                                <Typography><strong>One-page site:</strong> Simple, fast, and easy to share. Great for getting started.</Typography>
-                                <Typography><strong>Multi-page site:</strong> Good for SEO, more info, or blog content.</Typography>
-                                <Typography><strong>Web app:</strong> Adds scheduling, logins, secure forms, or custom tools.</Typography>
+                                <Typography><strong>One-page site:</strong> Fast, simple, and easy to share. Great for launching or linking from social media.</Typography>
+                                <Typography><strong>Multi-page site:</strong> Better for SEO, detailed service info, or a blog. Helps with visibility and trust.</Typography>
+                                <Typography><strong>Web app:</strong> Built for interaction. Includes scheduling, logins, secure forms, or custom tools — plus managing, storing, and displaying data securely.</Typography>
                             </Stack>
                         </Box>
 

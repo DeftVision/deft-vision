@@ -7,22 +7,28 @@ import { Footer } from '../components/index.js';
 const topics = [
     {
         title: "What Do You Actually Need Online?",
+        subtitle: "You’re not just getting a website — you’re getting a real frontend web app, built with modern frameworks, tailored to your business. " +
+            "This guide helps you understand why that matters — and why it’s probably all you need for now.\n",
         path: "/guide/what-you-need-to-get-online",
     },
     {
         title: "How to Launch Smart (and What Happens After)",
+        subtitle: "/guide/launching-smart",
         path: "/guide/launching-smart",
     },
     {
         title: "What You're Actually Getting Built",
+        subtitle: "guide/understanding-your-build",
         path: "/guide/understanding-your-build",
     },
     {
         title: "Owning and Receiving Your Site the Right Way",
+        subtitle: "guide/code-ownership-and-delivery",
         path: "/guide/code-ownership-and-delivery",
     },
     {
         title: "What Future-Proofing Actually Means",
+        subtitle: "guide/future-proofing",
         path: "/guide/future-proofing",
     }
 ];
@@ -40,7 +46,7 @@ export default function DeftGuide() {
                     </Typography>
 
                     <Stack spacing={4} sx={{ width: '100%' }}>
-                        {topics.map(({ title, path }, index) => (
+                        {topics.map(({ title, subtitle, path }, index) => (
                             <Box
                                 key={index}
                                 sx={{
@@ -53,6 +59,9 @@ export default function DeftGuide() {
                             >
                                 <Typography variant="h6" fontWeight={500}>
                                     {title}
+                                </Typography>
+                                <Typography variant="subtitle2">
+                                    {subtitle}
                                 </Typography>
                                 <Button
                                     component={Link}
