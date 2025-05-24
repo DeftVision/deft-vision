@@ -5,35 +5,41 @@ import {
     Paper,
     Button,
 } from '@mui/material';
-import CodeIcon from '@mui/icons-material/Code';
+import LanguageIcon  from '@mui/icons-material/Language';
 import SchoolIcon from '@mui/icons-material/School';
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
+import LanIcon  from '@mui/icons-material/Lan';
 
 
 import { Link as RouterLink } from 'react-router-dom';
 
 const ServicesOverview = [
-    // {
-    //     icon: <SchoolIcon fontSize="large" color="primary" />,
-    //     title: 'Deft Vision\'s Guide',
-    //     description:
-    //         'Not sure where to start? Let\'s figure out what you need now and where you want to be.',
-    //     link: '/services/deft-guide'
-    // },
-    {
-        icon: <CodeIcon fontSize="large" color="primary" />,
-        title: 'Business Web App',
+    /*{
+        icon: <SchoolIcon fontSize="large" color="primary" />,
+        title: 'Deft Vision\'s Guide',
         description:
-            'A fast, lead-focused web app that\'s mobile friendly, SEO ready, and built to grow with your business.',
-        link: '/services/business-web-app'
+            'Not sure where to start? Let\'s figure out what you need now and where you want to be.',
+        link: '/services/deft-guide'
+    },*/
+    {
+        icon: <LanIcon  fontSize="large" color="primary" />,
+        title: 'Custom Web App',
+        description: 'A powerful application tailored to your business. Includes secure login, admin tools, and custom features connected to a private database.',
+        link: '/services/custom-web-app'
+    },
+    {
+        icon: <LanguageIcon  fontSize="large" color="primary" />,
+        title: 'Standard Web App',
+        description: 'A fast, mobile-friendly site that helps customers find you, builds trust, and grows with your business.',
+        link: '/services/standard-web-app'
      },
-    // {
-    //     icon: <DesignServicesIcon fontSize="large" color="primary" />,
-    //     title: 'Maintenance Service Plan',
-    //     description:
-    //         'Keep your site fresh — we’ll handle content changes and tech updates.',
-    //     link: '/'
-    // }
+    /*{
+        icon: <DesignServicesIcon fontSize="large" color="primary" />,
+        title: 'Maintenance Service Plan',
+        description:
+            'Keep your site fresh — we’ll handle content changes and tech updates.',
+        link: '/'
+    }*/
 
 ];
 

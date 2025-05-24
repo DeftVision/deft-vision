@@ -1,65 +1,73 @@
 import Layout from '../layouts/Layout.jsx';
 import {Box, Button, Container, Stack, Typography} from '@mui/material';
-import {Footer} from '../components/index.js'
-import PricingSection from './PricingSection'
+import {Footer} from '../components/index.js';
 import BackToTop from '../layouts/BackToTop.jsx';
 import {Helmet} from "react-helmet-async";
 
 const features = [
     {
-        title: "🛠️ We do all the building",
-        description: "Focus on your business, no need to waste time learning a DIY platform.",
+        title: "🔒 Single-Tenant & Secure",
+        description: "Your app is fully isolated, secure hosting, private data, and full control.",
     },
     {
-        title: "🌐 Look Great Everywhere",
-        description: "Your site works beautifully on phones, tablets, and desktops.",
+        title: "🧩 Modular & Customizable",
+        description: "Start with a baseline and add exactly what you need — forms, dashboards, and more.",
     },
     {
-        title: "📬 Turn Visitors Into Customers",
-        description: "Take advantage of having built-in contact form that will send leads straight to your inbox.",
+        title: "📁 Built-In File Storage",
+        description: "Includes encrypted file uploads with scalable storage options.",
     },
     {
-        title: "🔐 Yours to Keep, Forever",
-        description: "You get full ownership of your code to expand, change, and host as you please.",
+        title: "🎛️ Admin & Role Management",
+        description: "Manage users and permissions with built-in admin tools.",
     },
     {
-        title: "🌱 A Web App That Grows With You",
-        description: "We’ll help you choose the right host that will allow your web application to grow as you do.",
+        title: "🧰 Optional Features Available",
+        description: "Enable MFA, notifications, scheduling, PDF export, and API integrations as needed.",
+    },
+    {
+        title: "⚙️ White Label Support",
+        description: "Brand it your way — custom domain, email, and interface.",
+    },
+    {
+        title: "🩺 HIPAA-Ready Architecture",
+        description: "HIPAA-compliant builds available. Scoped and priced separately.",
     }
 ];
 
 
-export default function BusinessWebApp() {
+
+
+const CustomWebApp = () => {
     return (
         <>
             <Helmet>
                 <title>Standard Web App | Deft Vision</title>
                 <meta name="description"
-                      content="Launch a professional, lead-focused business web app. No subscriptions. You own the code."/>
-                <meta property="og:title" content="Standard Web Application | Deft Vision"/>
+                      content="A full stack web application, with admin tools, cloud hosting, and data management."/>
+                <meta property="og:title" content="Business Web App | Deft Vision"/>
                 <meta property="og:description"
-                      content="Launch a professional, lead-focused business web app. No subscriptions. You own the code."/>
+                      content="A full stack web application, with admin tools, cloud hosting, and data management."/>
                 <meta property="og:type" content="website"/>
-                <meta property="og:url" content="https://deftvision.io/services/Standard-web-app"/>
+                <meta property="og:url" content="https://deftvision.io/services/custom-web-app"/>
                 <meta property="og:image" content="/og-cover.png"/>
                 <meta name="twitter:card" content="summary_large_image"/>
-                <meta name="twitter:title" content="Business Web App | Deft Vision"/>
+                <meta name="twitter:title" content="Custom Web Application | Deft Vision"/>
                 <meta name="twitter:description"
-                      content="Launch a professional, lead-focused business web app. No subscriptions. You own the code."/>
+                      content="A full stack web application, with admin tools, cloud hosting, and data management."/>
                 <meta name="twitter:image" content="/og-cover.png"/>
             </Helmet>
-
             <Layout>
                 <Container maxWidth="md" sx={{py: 10, mb: 8}}>
-                    <Stack spacing={10} alignItems="center" textAlign="center">
+                    <Stack spacing={10} alignItems='center' textAlign='center'>
 
                         {/* Hero */}
                         <Stack spacing={2}>
                             <Typography variant="h3" fontWeight={600}>
-                                Single Web Page Application
+                                A Custom Web App Built Around Your Business
                             </Typography>
                             <Typography variant="subtitle1" color="text.secondary" maxWidth="sm" mx="auto">
-                                A real frontend web app — built fast, mobile-ready, and yours forever.
+                                Get exactly what your business needs with secure login, admin controls, and cloud hosted tools to manage data and workflows.
                             </Typography>
                             <Box>
                                 <Button variant="contained" size='large' href="/#contact">
@@ -95,16 +103,17 @@ export default function BusinessWebApp() {
                             </Box>
                         </Stack>
 
-                        <Box sx={{mb: 6}}>
-                            <PricingSection/>
-                        </Box>
+
+
+
 
                     </Stack>
                 </Container>
-
                 <Footer/>
                 <BackToTop/>
             </Layout>
         </>
     );
-}
+};
+
+export default CustomWebApp;

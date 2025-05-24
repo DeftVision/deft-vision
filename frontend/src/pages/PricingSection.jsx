@@ -1,5 +1,6 @@
 // components/PricingSection.jsx
 import { Box, Typography, Stack, Button } from '@mui/material';
+import FeatureCheck from '../utils/FeatureCheck'
 
 export default function PricingSection() {
     return (
@@ -22,10 +23,10 @@ export default function PricingSection() {
             </Typography>
 
             <Stack spacing={1} alignItems="center" mb={4}>
-                <Typography variant="body1">✅ A modern, mobile-ready frontend site</Typography>
-                <Typography variant="body1">✅ Delivered within 5–7 business days from kickoff</Typography>
-                <Typography variant="body1">✅ Full ownership — no builder lock-ins or hidden fees</Typography>
-                <Typography variant="body1">This offer ends <strong>August 1</strong> and won’t be extended.</Typography>
+                <FeatureCheck text='A modern, mobile-ready frontend site' />
+                <FeatureCheck text='Delivered within 5–7 business days from kickoff'/>
+                <FeatureCheck text='Full ownership. There are no builder lock-ins or hidden fees' />
+                <Typography variant="body1">This offer ends on <strong>August 1</strong>.</Typography>
             </Stack>
 
             <Button variant="contained" href="/#contact">
