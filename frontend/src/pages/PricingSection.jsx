@@ -26,7 +26,7 @@ export default function PricingSection() {
                 <FeatureCheck text='A modern, mobile-ready frontend site' />
                 <FeatureCheck text='Delivered within 5–7 business days from kickoff'/>
                 <FeatureCheck text='Full ownership. There are no builder lock-ins or hidden fees' />
-                <Typography variant="body1">This offer ends <strong>August 1</strong> and won’t be extended.</Typography>
+                <Typography variant="body1">This offer ends on <strong>August 1</strong>.</Typography>
             </Stack>
 
             <Button variant="contained" href="/#contact">
