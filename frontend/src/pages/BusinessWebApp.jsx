@@ -7,24 +7,24 @@ import {Helmet} from "react-helmet-async";
 
 const features = [
     {
-        title: "🛠️ We Handle Everything",
-        description: "Focus on your business — Deft Vision takes care of the design, build, and delivery. You don’t lift a finger.",
+        title: "🛠️ We do all the building",
+        description: "Focus on your business, no need to waste time learning a DIY platform.",
     },
     {
         title: "🌐 Look Great Everywhere",
-        description: "Your site works beautifully on phones, tablets, and desktops — professionally polished and SEO-ready from day one.",
+        description: "Your site works beautifully on phones, tablets, and desktops.",
     },
     {
         title: "📬 Turn Visitors Into Customers",
-        description: "Built-in contact form sends leads straight to your inbox. No extra tools. No monthly charges. Just results.",
+        description: "Take advantage of having built-in contact form that will send leads straight to your inbox.",
     },
     {
         title: "🔐 Yours to Keep, Forever",
-        description: "You get full ownership of your site and code — no subscriptions, no platforms, no fine print. Just freedom.",
+        description: "You get full ownership of your code to expand, change, and host as you please.",
     },
     {
-        title: "🌱 An SPA That Grows With You",
-        description: "We’ll help you choose a free or low-cost host that fits your stage — and supports you as your business grows.",
+        title: "🌱 A Web App That Grows With You",
+        description: "We’ll help you choose the right host that will allow your web application to grow as you do.",
     }
 ];
 
@@ -33,7 +33,7 @@ export default function BusinessWebApp() {
     return (
         <>
             <Helmet>
-                <title>Business Web App | Deft Vision</title>
+                <title>Standard Web App | Deft Vision</title>
                 <meta name="description"
                       content="Launch a professional, lead-focused business web app. No subscriptions. You own the code."/>
                 <meta property="og:title" content="Business Web App | Deft Vision"/>
@@ -56,7 +56,7 @@ export default function BusinessWebApp() {
                         {/* Hero */}
                         <Stack spacing={2}>
                             <Typography variant="h3" fontWeight={600}>
-                                Business Web App
+                                Single Web Page Application
                             </Typography>
                             <Typography variant="subtitle1" color="text.secondary" maxWidth="sm" mx="auto">
                                 A real frontend web app — built fast, mobile-ready, and yours forever.
