@@ -3,6 +3,8 @@ import {Box, Button, Container, Stack, Typography} from '@mui/material';
 import {Footer} from '../components/index.js';
 import BackToTop from '../layouts/BackToTop.jsx';
 import {Helmet} from "react-helmet-async";
+import CustomAppPricingSection from '../pages/CustomAppPricingSection';
+
 
 const features = [
     {
@@ -105,6 +107,9 @@ const CustomWebApp = () => {
 
 
 
+                        <Box sx={{ mb: 6 }}>
+                            <CustomAppPricingSection />
+                        </Box>
 
 
                     </Stack>
