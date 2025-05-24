@@ -36,11 +36,11 @@ export default function BusinessWebApp() {
                 <title>Standard Web App | Deft Vision</title>
                 <meta name="description"
                       content="Launch a professional, lead-focused business web app. No subscriptions. You own the code."/>
-                <meta property="og:title" content="Business Web App | Deft Vision"/>
+                <meta property="og:title" content="Standard Web Application | Deft Vision"/>
                 <meta property="og:description"
                       content="Launch a professional, lead-focused business web app. No subscriptions. You own the code."/>
                 <meta property="og:type" content="website"/>
-                <meta property="og:url" content="https://deftvision.io/services/business-ready"/>
+                <meta property="og:url" content="https://deftvision.io/services/Standard-web-app"/>
                 <meta property="og:image" content="/og-cover.png"/>
                 <meta name="twitter:card" content="summary_large_image"/>
                 <meta name="twitter:title" content="Business Web App | Deft Vision"/>
