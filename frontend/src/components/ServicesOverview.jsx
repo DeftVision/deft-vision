@@ -51,7 +51,7 @@ export default function Services() {
         <Box id="services" sx={{ py: 8, backgroundColor: 'background.paper' }}>
             <Container maxWidth="lg">
                 <Typography variant="h2" align="center" gutterBottom>
-                    Launch Your Site
+                    Build Your Online Presence
                 </Typography>
 
                 <Box
