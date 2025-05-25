@@ -8,7 +8,7 @@ import {
 import LanguageIcon  from '@mui/icons-material/Language';
 import SchoolIcon from '@mui/icons-material/School';
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
-import LanIcon  from '@mui/icons-material/Lan';
+import DomainIcon     from '@mui/icons-material/Domain';
 
 
 import { Link as RouterLink } from 'react-router-dom';
@@ -21,18 +21,21 @@ const ServicesOverview = [
             'Not sure where to start? Let\'s figure out what you need now and where you want to be.',
         link: '/services/deft-guide'
     },*/
-    {
-        icon: <LanIcon  fontSize="large" color="primary" />,
-        title: 'Custom Web App',
-        description: 'A powerful application tailored to your business. Includes secure login, admin tools, and custom features connected to a private database.',
-        link: '/services/custom-web-app'
-    },
+
     {
         icon: <LanguageIcon  fontSize="large" color="primary" />,
         title: 'Standard Web App',
         description: 'A fast, mobile-friendly site that helps customers find you, builds trust, and grows with your business.',
+        text: 'Learn More',
         link: '/services/standard-web-app'
      },
+    {
+        icon: <DomainIcon     fontSize="large" color="primary" />,
+        title: 'Stride',
+        description: 'A secure, branded platform to run your business.',
+        text: 'Request Access',
+        link: '/services/custom-web-app'
+    },
     /*{
         icon: <DesignServicesIcon fontSize="large" color="primary" />,
         title: 'Maintenance Service Plan',
@@ -86,7 +89,7 @@ export default function Services() {
                             </Typography>
                             {service.link && (
                                 <RouterLink to={service.link} style={{ textDecoration: 'none' }}>
-                                    <Button variant='outlined'>Learn More</Button>
+                                    <Button variant='outlined'>{service.text}</Button>
                                 </RouterLink>
                             )}
                         </Paper>
