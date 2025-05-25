@@ -70,7 +70,7 @@ function Contact() {
                                 justifyContent="center"
                                 gap={3}
                             >
-                                {features.map(({title, description}, i) => (
+                                {/*{features.map(({title, description}, i) => (
                                     <Box key={i} display="flex" alignItems="flex-start" width={{xs: '100%', sm: '55%'}}
                                          maxWidth="400px">
                                         <Box>
@@ -82,7 +82,7 @@ function Contact() {
                                             </Typography>
                                         </Box>
                                     </Box>
-                                ))}
+                                ))}*/}
                             </Box>
                         </Stack>
 
