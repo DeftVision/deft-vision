@@ -14,7 +14,7 @@ const features = [
         description: "Start with a baseline and add exactly what you need — forms, dashboards, and more.",
     },
     {
-        title: "📁 Built-In File Storage",
+        title: "📁 File Storage",
         description: "Includes encrypted file uploads with scalable storage options.",
     },
     {
