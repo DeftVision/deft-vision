@@ -1,7 +1,8 @@
 import {Box, Stack, Typography, TextField, Button, Container, List, ListItem } from '@mui/material';
 import emailjs from '@emailjs/browser';
 import { useState } from 'react';
-import { sendRequestAccessForm } from '../utils/emailService';
+import {Footer} from "../components/index.js";
+import BackToTop from "../layouts/BackToTop.jsx";
 
 
 function Contact() {
@@ -17,7 +18,7 @@ function Contact() {
             return;
         }
 
-        sendContactForm(e.target).then(
+        /*sendContactForm(e.target).then(
             (result) => {
                 console.log('Email sent!', result.text);
                 alert("Thank you! Your message has been sent.");
@@ -28,7 +29,7 @@ function Contact() {
                 alert("Oops, something went wrong. Please try again.");
                 setIsSending(false);
             }
-        );
+        );*/
 
         e.target.reset(); // Clear the form after sending
     };
@@ -111,6 +112,8 @@ function Contact() {
                         </Box>
                     </Stack>
                 </Container>
+                <Footer/>
+                <BackToTop/>
             </Box>
         </Box>
     );
