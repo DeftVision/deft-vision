@@ -1,119 +1,88 @@
-import Layout from '../layouts/Layout.jsx';
-import {Box, Button, Container, Stack, Typography} from '@mui/material';
-import {Footer} from '../components/index.js';
-import BackToTop from '../layouts/BackToTop.jsx';
-import {Helmet} from "react-helmet-async";
-
-const features = [
-    {
-        title: "🔒 Single-Tenant & Secure",
-        description: "Your app is fully isolated, secure hosting, private data, and full control.",
-    },
-    {
-        title: "🧩 Modular & Customizable",
-        description: "Start with a baseline and add exactly what you need — forms, dashboards, and more.",
-    },
-    {
-        title: "📁 File Storage",
-        description: "Includes encrypted file uploads with scalable storage options.",
-    },
-    {
-        title: "🎛️ Admin & Role Management",
-        description: "Manage users and permissions with built-in admin tools.",
-    },
-    {
-        title: "🧰 Optional Features Available",
-        description: "Enable MFA, notifications, scheduling, PDF export, and API integrations as needed.",
-    },
-    {
-        title: "⚙️ White Label Support",
-        description: "Brand it your way — custom domain, email, and interface.",
-    },
-    {
-        title: "🩺 HIPAA-Ready Architecture",
-        description: "HIPAA-compliant builds available. Scoped and priced separately.",
-    }
-];
+import {Box, Stack, Typography, TextField, Button, Container, List, ListItem } from '@mui/material';
+import emailjs from '@emailjs/browser';
+import { useState } from 'react';
+import { sendRequestAccessForm } from '../utils/emailService';
 
 
+function Contact() {
+    const [isSending, setIsSending] = useState(false);
 
+    const sendEmail = (e) => {
+        e.preventDefault();
+        setIsSending(true);
 
-const CustomWebApp = () => {
+        // Honeypot check
+        if (e.target.website.value) {
+            setIsSending(false);
+            return;
+        }
+
+        sendContactForm(e.target).then(
+            (result) => {
+                console.log('Email sent!', result.text);
+                alert("Thank you! Your message has been sent.");
+                setIsSending(false);
+            },
+            (error) => {
+                console.error('Email failed:', error.text);
+                alert("Oops, something went wrong. Please try again.");
+                setIsSending(false);
+            }
+        );
+
+        e.target.reset(); // Clear the form after sending
+    };
+
     return (
-        <>
-            <Helmet>
-                <title>Standard Web App | Deft Vision</title>
-                <meta name="description"
-                      content="A full stack web application, with admin tools, cloud hosting, and data management."/>
-                <meta property="og:title" content="Business Web App | Deft Vision"/>
-                <meta property="og:description"
-                      content="A full stack web application, with admin tools, cloud hosting, and data management."/>
-                <meta property="og:type" content="website"/>
-                <meta property="og:url" content="https://deftvision.io/services/custom-web-app"/>
-                <meta property="og:image" content="/og-cover.png"/>
-                <meta name="twitter:card" content="summary_large_image"/>
-                <meta name="twitter:title" content="Custom Web Application | Deft Vision"/>
-                <meta name="twitter:description"
-                      content="A full stack web application, with admin tools, cloud hosting, and data management."/>
-                <meta name="twitter:image" content="/og-cover.png"/>
-            </Helmet>
-            <Layout>
-                <Container maxWidth="md" sx={{py: 10, mb: 8}}>
-                    <Stack spacing={10} alignItems='center' textAlign='center'>
+        <Box id='contact' sx={{ my: 8 }}>
+            <Box
+                sx={{
+                    minHeight: 'auto',
+                    pt: 10,
+                    bgcolor: 'background.paper',
+                }}
+            >
+                <Container maxWidth='sm'>
+                    <Stack spacing={2}>
+                        <Typography variant="h5" component='h2'>Be the First to Experience Stride</Typography>
 
-                        {/* Hero */}
-                        <Stack spacing={2}>
-                            <Typography variant="h3" fontWeight={600}>
-                                A Custom Web App Built Around Your Business
+                        <Typography variant="body2" color="text.secondary">
+                            {/*Stride is an all-in-one platform designed to help you manage and grow your business more efficiently.
+                            Right now, we are offering early access to a select group of businesses so we can gather real-world feedback and improve our tools before a wider release.
+                            If you join as an early user, you will have a direct influence on the features and experience, and your feedback will help shape the future of Stride.
+                            Surveys will be sent to the email you provide, and your honest input is appreciated.
+                            As a thank you, you will receive a discount if you decide to continue using Stride after the early access period.
+                            Once you submit your request, our team will review it and contact you by email within two business days with next steps.
+                            Discounts will be offered if you choose to continue to implement Stride in your business.*/}
+                            Stride helps you manage and grow your business. Join our early access group to try new features and share your feedback.
+                            You’ll get a discount if you choose to keep using Stride. After you submit your request, we’ll contact you by email within two business days.
                             </Typography>
-                            <Typography variant="subtitle1" color="text.secondary" maxWidth="sm" mx="auto">
-                                Get exactly what your business needs with secure login, admin controls, and cloud hosted tools to manage data and workflows.
-                            </Typography>
-                            <Box>
-                                <Button variant="contained" size='large' href="/#contact">
-                                    Start My Project
-                                </Button>
-                            </Box>
-                        </Stack>
 
-                        {/* Features */}
-                        <Stack spacing={3} width="100%" sx={{py: 8}}>
-                            <Typography variant="h5" fontWeight={600} textAlign="center">
-                                What’s Included
-                            </Typography>
-                            <Box
-                                display="flex"
-                                flexWrap="wrap"
-                                justifyContent="center"
-                                gap={3}
-                            >
-                                {features.map(({title, description}, i) => (
-                                    <Box key={i} display="flex" alignItems="flex-start" width={{xs: '100%', sm: '55%'}}
-                                         maxWidth="400px">
-                                        <Box>
-                                            <Typography variant="body2" fontWeight={600}>
-                                                {title}
-                                            </Typography>
-                                            <Typography variant="body2" color="text.secondary">
-                                                {description}
-                                            </Typography>
-                                        </Box>
-                                    </Box>
-                                ))}
-                            </Box>
-                        </Stack>
-
-
-
-
-
+                        <Box component='form' onSubmit={sendEmail}>
+                            <Stack spacing={2}>
+                                <input type="text" name="website" style={{ display: 'none' }} tabIndex="-1" autoComplete="off" />
+                                <TextField label="Name" name="user_name" aria-label='Your name' fullWidth required />
+                                <TextField label="Email" type="email" name="user_email" aria-label='Your email' fullWidth required />
+                                <TextField
+                                    label="Message"
+                                    name="message"
+                                    aria-label='Your message'
+                                    fullWidth
+                                    multiline
+                                    rows={4}
+                                    placeholder="What kind of problems are you trying to solve with your business operations?"
+                                    required
+                                />
+                            </Stack>
+                            <Button type="submit" variant="contained" disabled={isSending} sx={{ mt: 3, mb: 3 }}>
+                                {isSending ? 'Sending...' : 'I\'m Ready!'}
+                            </Button>
+                        </Box>
                     </Stack>
                 </Container>
-                <Footer/>
-                <BackToTop/>
-            </Layout>
-        </>
+            </Box>
+        </Box>
     );
-};
+}
 
-export default CustomWebApp;
+export default Contact;
