@@ -4,8 +4,6 @@ import { Hero, Service, Portfolio, Contact, Footer } from './components/index';
 
 
 
-
-
 function App() {
     return (
         <Layout>
