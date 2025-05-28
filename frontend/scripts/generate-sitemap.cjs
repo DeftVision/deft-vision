@@ -1,5 +1,5 @@
-import { SitemapStream, streamToPromise } from 'sitemap';
-import { createWriteStream } from 'fs';
+const { SitemapStream, streamToPromise } = require('sitemap');
+const { createWriteStream } = require('fs');
 
 const today = new Date().toISOString().split('T')[0];
 
@@ -12,7 +12,7 @@ const links = [
 
 const sitemap = new SitemapStream({ hostname: 'https://deftvision.io/' });
 
-for (const link of links) sitemap.write(link);
+links.forEach(link => sitemap.write(link));
 sitemap.end();
 
 streamToPromise(sitemap).then(data => {
