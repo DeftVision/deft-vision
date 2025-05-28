@@ -1,17 +1,18 @@
-const { SitemapStream, streamToPromise } = require('sitemap');
-const { createWriteStream } = require('fs');
+import { SitemapStream, streamToPromise } from 'sitemap';
+import { createWriteStream } from 'fs';
+
+const today = new Date().toISOString().split('T')[0];
 
 const links = [
-    { url: '/', changefreq: 'weekly', priority: 1.0 },
-    { url: '/services/standard-web-app', changefreq: 'weekly', priority: 0.8 },
-    { url: '/privacy', changefreq: 'monthly', priority: 0.6 },
-    { url: '/terms', changefreq: 'monthly', priority: 0.6 }
-    // Add more routes as needed
+    { url: '/', changefreq: 'weekly', priority: 1.0, lastmod: today },
+    { url: '/services/standard-web-app', changefreq: 'weekly', priority: 0.8, lastmod: today },
+    { url: '/privacy', changefreq: 'monthly', priority: 0.6, lastmod: today },
+    { url: '/terms', changefreq: 'monthly', priority: 0.6, lastmod: today }
 ];
 
 const sitemap = new SitemapStream({ hostname: 'https://deftvision.io/' });
 
-links.forEach(link => sitemap.write(link));
+for (const link of links) sitemap.write(link);
 sitemap.end();
 
 streamToPromise(sitemap).then(data => {
