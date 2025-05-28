@@ -24,7 +24,7 @@ export default function PricingSection() {
 
             <Stack spacing={1} alignItems="center" mb={4}>
                 <FeatureCheck text='A modern, mobile-ready frontend site' />
-                <FeatureCheck text='Delivered within 5–7 business days from kickoff'/>
+                <FeatureCheck text='Delivered within 7-10 business days from kickoff'/>
                 <FeatureCheck text='Full ownership. There are no builder lock-ins or hidden fees' />
                 <Typography variant="body1">This offer ends on <strong>August 1</strong>.</Typography>
             </Stack>
