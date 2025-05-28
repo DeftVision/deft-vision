@@ -269,7 +269,8 @@ export default function Terms() {
                    </Typography>
 
                    <Typography variant="body1" color="text.secondary">
-                       Please read the terms below before starting a project.
+                       Please read the terms below before starting a project.<br/>
+                       Terms effective: May 28, 2025
                    </Typography>
 
                    <Stack spacing={4}>
