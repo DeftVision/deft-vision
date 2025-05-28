@@ -28,10 +28,14 @@ jobs:
         working-directory: frontend
         run: npm ci
 
+      - name: Generate sitemap.xml
+        working-directory: frontend
+        run: npm run generate:sitemap
+
       - name: Build project
         working-directory: frontend
         run: npm run build
-
+      
       - name: Set up SSH
         uses: webfactory/ssh-agent@v0.7.0
         with:
