@@ -33,8 +33,8 @@ const ServicesOverview = [
         icon: <DomainIcon     fontSize="large" color="primary" />,
         title: 'Stride',
         description: 'A secure, branded platform to run your business.',
-        text: 'Request Access',
-        link: '/services/custom-web-app'
+        text: 'Waiting List Coming Soon',
+        link: '/'
     },
     /*{
         icon: <DesignServicesIcon fontSize="large" color="primary" />,
