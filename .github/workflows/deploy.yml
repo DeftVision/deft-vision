@@ -24,9 +24,9 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies
+      - name: Install dependencies (legacy-peer-deps for React 19)
         working-directory: frontend
-        run: npm ci
+        run: npm install --legacy-peer-deps
 
       - name: Generate sitemap.xml
         working-directory: frontend
@@ -36,6 +36,7 @@ jobs:
         working-directory: frontend
         run: npm run build
       
+
       - name: Set up SSH
         uses: webfactory/ssh-agent@v0.7.0
         with:
