@@ -15,10 +15,6 @@ const features = [
         description: "Your site works beautifully on phones, tablets, and desktops.",
     },
     {
-        title: "📬 Turn Visitors Into Customers",
-        description: "Take advantage of having built-in contact form that will send leads straight to your inbox.",
-    },
-    {
         title: "🔐 Yours to Keep, Forever",
         description: "You get full ownership of your code to expand, change, and host as you please.",
     },

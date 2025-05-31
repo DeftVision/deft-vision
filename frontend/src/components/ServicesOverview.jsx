@@ -6,22 +6,12 @@ import {
     Button,
 } from '@mui/material';
 import LanguageIcon  from '@mui/icons-material/Language';
-import SchoolIcon from '@mui/icons-material/School';
-import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import DomainIcon     from '@mui/icons-material/Domain';
 
 
 import { Link as RouterLink } from 'react-router-dom';
 
 const ServicesOverview = [
-    /*{
-        icon: <SchoolIcon fontSize="large" color="primary" />,
-        title: 'Deft Vision\'s Guide',
-        description:
-            'Not sure where to start? Let\'s figure out what you need now and where you want to be.',
-        link: '/services/deft-guide'
-    },*/
-
     {
         icon: <LanguageIcon  fontSize="large" color="primary" />,
         title: 'Standard Web App',
@@ -33,17 +23,9 @@ const ServicesOverview = [
         icon: <DomainIcon     fontSize="large" color="primary" />,
         title: 'Stride',
         description: 'A secure, branded platform to run your business.',
-        text: 'Request Access',
-        link: '/services/custom-web-app'
-    },
-    /*{
-        icon: <DesignServicesIcon fontSize="large" color="primary" />,
-        title: 'Maintenance Service Plan',
-        description:
-            'Keep your site fresh — we’ll handle content changes and tech updates.',
+        text: 'Coming Soon',
         link: '/'
-    }*/
-
+    },
 ];
 
 export default function Services() {
