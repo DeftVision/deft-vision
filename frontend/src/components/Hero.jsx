@@ -1,43 +1,44 @@
-// components/Hero.jsx
 import { Box, Typography, Button, Container } from '@mui/material';
-import { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
+
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: { staggerChildren: 0.2 },
+    },
+};
+
+const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+};
 
 export default function Hero() {
-    const heroRef = useRef(null);
-    const [visible, setVisible] = useState(false);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setVisible(true);
-                    observer.disconnect();
-                }
-            },
-            { threshold: 0.4 }
-        );
-
-        if (heroRef.current) observer.observe(heroRef.current);
-        return () => observer.disconnect();
-    }, []);
-
     return (
         <Box
-            ref={heroRef}
             sx={{
                 minHeight: '60vh',
-                backgroundImage: 'url(/images/hero.webp)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
+                position: 'relative',
+                overflow: 'hidden',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                position: 'relative',
                 px: 2,
             }}
         >
-            {/* Enhanced overlay with blur */}
+            {/* Animated Gradient Background */}
+            <Box
+                sx={{
+                    position: 'absolute',
+                    inset: 0,
+                    zIndex: 0,
+                    background: 'linear-gradient(270deg, #3A6EA5, #8357c5, #00A9A5)',
+                    backgroundSize: '600% 600%',
+                    animation: 'gradientShift 20s ease infinite',
+                }}
+            />
+
+            {/* Dark overlay on top of gradient */}
             <Box
                 sx={{
                     position: 'absolute',
@@ -48,8 +49,13 @@ export default function Hero() {
                 }}
             />
 
-            {/* Frosted glass container for text */}
+            {/* Frosted Glass Content */}
             <Container
+                component={motion.div}
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.4 }}
                 maxWidth="md"
                 sx={{
                     position: 'relative',
@@ -63,9 +69,9 @@ export default function Hero() {
                 }}
             >
                 <Typography
+                    component={motion.h1}
+                    variants={fadeInUp}
                     variant="h1"
-                    gutterBottom
-                    className={`fade-in-up ${visible ? 'visible delay-0' : ''}`}
                     sx={{
                         color: 'white',
                         fontWeight: 600,
@@ -76,9 +82,11 @@ export default function Hero() {
                 >
                     Websites that work like apps.
                 </Typography>
+
                 <Typography
+                    component={motion.p}
+                    variants={fadeInUp}
                     variant="h5"
-                    className={`fade-in-up ${visible ? 'visible delay-1' : ''}`}
                     sx={{
                         color: 'white',
                         fontWeight: 300,
@@ -88,25 +96,27 @@ export default function Hero() {
                 >
                     Built to grow with your business.
                 </Typography>
-                <Button
-                    variant="contained"
-                    size="large"
-                    className={`fade-in-up ${visible ? 'visible delay-2' : ''}`}
-                    sx={{
-                        backgroundColor: '#3A6EA5',
-                        color: '#fff',
-                        px: 4,
-                        fontWeight: 500,
-                        textTransform: 'none',
-                        boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
-                        '&:hover': {
-                            backgroundColor: '#2f5a85',
-                        },
-                    }}
-                    href="#contact"
-                >
-                    Start My Project
-                </Button>
+
+                <motion.div variants={fadeInUp}>
+                    <Button
+                        variant="contained"
+                        size="large"
+                        href="#contact"
+                        sx={{
+                            backgroundColor: '#3A6EA5',
+                            color: '#fff',
+                            px: 4,
+                            fontWeight: 500,
+                            textTransform: 'none',
+                            boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
+                            '&:hover': {
+                                backgroundColor: '#2f5a85',
+                            },
+                        }}
+                    >
+                        Start My Project
+                    </Button>
+                </motion.div>
             </Container>
         </Box>
     );
