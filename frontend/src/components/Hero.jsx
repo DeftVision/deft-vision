@@ -17,28 +17,19 @@ export default function Hero() {
     return (
         <Box
             sx={{
-                minHeight: '60vh',
-                position: 'relative',
-                overflow: 'hidden',
+                minHeight: '100vh',
+                backgroundImage: 'url(/images/hero.png)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                position: 'relative',
                 px: 2,
             }}
         >
-            {/* Animated Gradient Background */}
-            <Box
-                sx={{
-                    position: 'absolute',
-                    inset: 0,
-                    zIndex: 0,
-                    background: 'linear-gradient(270deg, #3A6EA5, #8357c5, #00A9A5)',
-                    backgroundSize: '600% 600%',
-                    animation: 'gradientShift 20s ease infinite',
-                }}
-            />
-
-            {/* Dark overlay on top of gradient */}
+            {/* Static dark overlay */}
             <Box
                 sx={{
                     position: 'absolute',
@@ -103,14 +94,15 @@ export default function Hero() {
                         size="large"
                         href="#contact"
                         sx={{
-                            backgroundColor: '#3A6EA5',
+                            backgroundColor: '#F06449',
                             color: '#fff',
                             px: 4,
                             fontWeight: 500,
                             textTransform: 'none',
-                            boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
+                            borderRadius: 2,
+                            boxShadow: '0 4px 12px rgba(240, 100, 73, 0.35)',
                             '&:hover': {
-                                backgroundColor: '#2f5a85',
+                                backgroundColor: '#C54B35', // darker coral
                             },
                         }}
                     >
