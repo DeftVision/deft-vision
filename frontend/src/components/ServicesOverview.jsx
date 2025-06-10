@@ -1,36 +1,35 @@
+import React from 'react';
 import {
     Box,
     Container,
     Typography,
     Button,
 } from '@mui/material';
+import { motion } from 'framer-motion';
 import LanguageIcon from '@mui/icons-material/Language';
 import DomainIcon from '@mui/icons-material/Domain';
 import { Link as RouterLink } from 'react-router-dom';
-import { motion } from 'framer-motion';
 
-const MotionPaper = motion(Box); // Custom motion-enabled Paper-like Box
+const MotionCard = motion(Box);
 
 const ServicesOverview = [
     {
         icon: <LanguageIcon fontSize="large" color="primary" />,
         title: 'Standard Web App',
-        description:
-            'A fast, mobile-friendly site that helps customers find you, builds trust, and grows with your business.',
-        text: 'Learn More',
+        description: 'Launch a stunning, mobile-optimized website in days — tailored to your brand, built for speed, and fully yours to own.',
         link: '/services/standard-web-app',
+        text: 'See What’s Included',
     },
     {
         icon: <DomainIcon fontSize="large" color="primary" />,
-        title: 'Stride',
-        description: 'A secure, branded platform to run your business.',
-        text: 'Coming Soon',
-        link: '/',
+        title: 'Stride Platform',
+        description: 'A secure, scalable platform for running your business — with dashboards, form builders, and role-based access built right in.',
+        link: '/services/stride',
+        text: 'Explore the Platform',
     },
 ];
 
-// Animation variants for Framer Motion
-const cardVariants = {
+const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: (i) => ({
         opacity: 1,
@@ -45,10 +44,13 @@ const cardVariants = {
 
 export default function Services() {
     return (
-        <Box id="services" sx={{ py: 8, backgroundColor: 'background.paper' }}>
+        <Box id="services" sx={{ py: 10, backgroundColor: 'background.paper' }}>
             <Container maxWidth="lg">
                 <Typography variant="h2" align="center" gutterBottom>
-                    Build Your Online Presence
+                    Choose Your Solution
+                </Typography>
+                <Typography variant="subtitle1" align="center" color="text.secondary" sx={{ mb: 6 }}>
+                    Whether you need a fast, beautiful website or a powerful platform to run your business — we’ve got you covered.
                 </Typography>
 
                 <Box
@@ -57,61 +59,51 @@ export default function Services() {
                         flexWrap: 'wrap',
                         justifyContent: 'center',
                         gap: 4,
-                        mt: 4,
                     }}
                 >
                     {ServicesOverview.map((service, index) => (
-                        <MotionPaper
+                        <MotionCard
                             key={service.title}
                             custom={index}
-                            variants={cardVariants}
+                            variants={fadeInUp}
                             initial="hidden"
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.3 }}
                             whileHover={{
                                 y: -6,
-                                boxShadow: '0 12px 24px rgba(0, 0, 0, 0.1)',
+                                boxShadow: '0px 12px 24px rgba(0, 0, 0, 0.1)',
                                 transition: { duration: 0.3 },
                             }}
                             sx={{
-                                cursor: 'default',
-                                flex: '1 1 260px',
-                                maxWidth: 320,
                                 p: 4,
+                                borderRadius: 3,
+                                maxWidth: 340,
+                                flex: '1 1 300px',
                                 textAlign: 'center',
                                 backgroundColor: '#fff',
-                                borderRadius: 2,
                                 border: '1px solid #e0e0e0',
-                                boxShadow: 2,
                                 transition: 'all 0.3s ease-in-out',
                             }}
                         >
-                            {service.icon}
+                            <Box>{service.icon}</Box>
                             <Typography variant="h6" sx={{ mt: 2, mb: 1 }}>
                                 {service.title}
                             </Typography>
-                            <Typography
-                                variant="body2"
-                                color="text.secondary"
-                                sx={{ mb: 2 }}
-                            >
+                            <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
                                 {service.description}
                             </Typography>
-                            {service.link && (
-                                <Button
-                                    component={RouterLink}
-                                    to={service.link}
-                                    variant="outlined"
-                                    color="primary"
-                                >
-                                    {service.text}
-                                </Button>
-                            )}
-                        </MotionPaper>
+                            <Button
+                                component={RouterLink}
+                                to={service.link}
+                                variant="outlined"
+                                color="primary"
+                            >
+                                {service.text}
+                            </Button>
+                        </MotionCard>
                     ))}
                 </Box>
             </Container>
         </Box>
     );
 }
-
