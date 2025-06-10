@@ -6,24 +6,24 @@ import {
     Button,
 } from '@mui/material';
 import { motion } from 'framer-motion';
-import LanguageIcon from '@mui/icons-material/Language';
-import DomainIcon from '@mui/icons-material/Domain';
+import RocketLaunchRoundedIcon from '@mui/icons-material/RocketLaunchRounded';
+import BusinessCenterRoundedIcon from '@mui/icons-material/BusinessCenterRounded';
 import { Link as RouterLink } from 'react-router-dom';
 
 const MotionCard = motion(Box);
 
 const ServicesOverview = [
     {
-        icon: <LanguageIcon fontSize="large" color="primary" />,
-        title: 'Standard Web App',
-        description: 'Launch a stunning, mobile-optimized website in days — tailored to your brand, built for speed, and fully yours to own.',
+        icon: <RocketLaunchRoundedIcon fontSize="large" color="primary" />,
+        title: 'Web Application',
+        description: 'A fast, mobile-friendly site tailored to your brand. SEO-ready, built for performance, and fully yours to own.',
         link: '/services/standard-web-app',
         text: 'See What’s Included',
     },
     {
-        icon: <DomainIcon fontSize="large" color="primary" />,
+        icon: <BusinessCenterRoundedIcon fontSize="large" color="primary" />,
         title: 'Stride Platform',
-        description: 'A secure, scalable platform for running your business — with dashboards, form builders, and role-based access built right in.',
+        description: 'A secure, scalable platform with dashboards, form builders, and role-based access — designed to power the way your business operates.',
         link: '/services/stride',
         text: 'Explore the Platform',
     },
