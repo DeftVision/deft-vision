@@ -1,5 +1,6 @@
-import { Box, Typography, Button, Container } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
 import { motion } from 'framer-motion';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 
 const containerVariants = {
     hidden: {},
@@ -18,45 +19,29 @@ export default function Hero() {
         <Box
             sx={{
                 minHeight: '100vh',
-                backgroundImage: 'url(/images/hero.png)',
+                backgroundImage: 'url(/images/hero-green.png)',
                 backgroundSize: 'cover',
-                backgroundPosition: 'center',
+                backgroundPosition: 'center 40%',
                 backgroundRepeat: 'no-repeat',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center',
+                justifyContent: { xs: 'center', md: 'flex-start' },
+                px: { xs: 2, md: 8 },
                 position: 'relative',
-                px: 2,
             }}
         >
-            {/* Static dark overlay */}
             <Box
-                sx={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8))',
-                    backdropFilter: 'blur(2px)',
-                    zIndex: 1,
-                }}
-            />
-
-            {/* Frosted Glass Content */}
-            <Container
                 component={motion.div}
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.4 }}
-                maxWidth="md"
                 sx={{
-                    position: 'relative',
+                    maxWidth: '680px',
+                    width: '100%',
+                    color: 'white',
+                    textAlign: { xs: 'center', md: 'left' },
                     zIndex: 2,
-                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                    backdropFilter: 'blur(6px)',
-                    borderRadius: 2,
-                    p: { xs: 3, sm: 4 },
-                    boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
-                    textAlign: 'center',
                 }}
             >
                 <Typography
@@ -89,27 +74,49 @@ export default function Hero() {
                 </Typography>
 
                 <motion.div variants={fadeInUp}>
-                    <Button
-                        variant="contained"
-                        size="large"
-                        href="#contact"
+                    <Box
                         sx={{
-                            backgroundColor: '#F06449',
-                            color: '#fff',
-                            px: 4,
-                            fontWeight: 500,
-                            textTransform: 'none',
-                            borderRadius: 2,
-                            boxShadow: '0 4px 12px rgba(240, 100, 73, 0.35)',
-                            '&:hover': {
-                                backgroundColor: '#C54B35', // darker coral
-                            },
+                            display: 'flex',
+                            justifyContent: { xs: 'center', md: 'flex-start' },
+                            mb: { xs: 6, md: 0 }, // ✅ mobile bottom margin
                         }}
                     >
-                        Start My Project
-                    </Button>
+
+                    <Button
+                            variant="contained"
+                            size="large"
+                            href="#contact"
+                            sx={{
+                                backgroundColor: '#F06449',
+                                color: '#fff',
+                                px: 4,
+                                fontWeight: 500,
+                                textTransform: 'none',
+                                borderRadius: 2,
+                                boxShadow: '0 4px 12px rgba(240, 100, 73, 0.35)',
+                                '&:hover': {
+                                    backgroundColor: '#C54B35',
+                                },
+                            }}
+                        >
+                            Start My Project
+                        </Button>
+                    </Box>
+                    <Box
+                        sx={{
+                            mt: { xs: 4, md: 6 },
+                            display: 'flex',
+                            justifyContent: { xs: 'center', md: 'flex-start' },
+                            fontSize: '2rem',
+                            color: '#fff',
+                            animation: 'bounce 2s infinite',
+                        }}
+                    >
+                        <KeyboardArrowDownIcon sx={{ fontSize: 32 }} />
+                    </Box>
+
                 </motion.div>
-            </Container>
+            </Box>
         </Box>
     );
 }

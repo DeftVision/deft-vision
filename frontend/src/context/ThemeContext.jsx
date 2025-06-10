@@ -3,7 +3,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { GlobalStyles } from '@mui/material';
 
-export const ThemeContext = createContext();
+const ThemeContext = createContext();
 
 const lightModeColors = {
     primary: '#F06449',
@@ -16,16 +16,16 @@ const lightModeColors = {
 };
 
 const darkModeColors = {
-    primary: '#F06449',
-    primaryDark: '#C54B35',
-    secondary: '#9B2BCB',
+    primary: '#D86D50',
+    primaryDark: '#A65D4E',
+    secondary: '#C98C36',
     textPrimary: '#F5F5F5',
     textSecondary: '#BBBBBB',
     backgroundDefault: '#1E1128',
     backgroundPaper: '#2B1A38',
 };
 
-export const ThemeContextProvider = ({ children }) => {
+const ThemeContextProvider = ({ children }) => {
     const [mode, setMode] = useState('light');
 
     const theme = useMemo(() => {
@@ -108,4 +108,4 @@ export const ThemeContextProvider = ({ children }) => {
     );
 };
 
-export default ThemeContextProvider;
+export { ThemeContext, ThemeContextProvider };
