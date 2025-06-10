@@ -2,6 +2,7 @@ import { Box, Typography, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 
+
 const containerVariants = {
     hidden: {},
     visible: {
@@ -16,107 +17,132 @@ const fadeInUp = {
 
 export default function Hero() {
     return (
-        <Box
-            sx={{
-                minHeight: '100vh',
-                backgroundImage: 'url(/images/hero-green.png)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center 40%',
-                backgroundRepeat: 'no-repeat',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: { xs: 'center', md: 'flex-start' },
-                px: { xs: 2, md: 8 },
-                position: 'relative',
-            }}
-        >
+        <>
             <Box
-                component={motion.div}
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.4 }}
                 sx={{
-                    maxWidth: '680px',
-                    width: '100%',
-                    color: 'white',
-                    textAlign: { xs: 'center', md: 'left' },
-                    zIndex: 2,
+                    position: 'absolute',
+                    top: 24,
+                    left: 32,
+                    zIndex: 10,
+                    display: 'flex',
+                    alignItems: 'center',
                 }}
             >
-                <Typography
-                    component={motion.h1}
-                    variants={fadeInUp}
-                    variant="h1"
+                <Box
+                    component="img"
+                    src="/images/DeftVisionLogo.svg"
+                    alt="Deft Vision Logo"
                     sx={{
+                        height: 56,        // size
+                        width: 'auto',     // maintain aspect ratio
+                        display: 'block',  // Avoids baseline alignment glitches
+                        // pt: '2px',
+                    }}
+                />
+            </Box>
+
+            <Box
+                sx={{
+                    minHeight: '100vh',
+                    backgroundImage: 'url(/images/hero-green.png)',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center 40%',
+                    backgroundRepeat: 'no-repeat',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: { xs: 'center', md: 'flex-start' },
+                    px: { xs: 2, md: 8 },
+                    position: 'relative',
+                }}
+            >
+                <Box
+                    component={motion.div}
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.4 }}
+                    sx={{
+                        maxWidth: '680px',
+                        width: '100%',
                         color: 'white',
-                        fontWeight: 600,
-                        textShadow: '1px 1px 4px rgba(0,0,0,0.7)',
-                        mb: 2,
-                        fontSize: { xs: '2.25rem', sm: '3rem', md: '4rem' },
+                        textAlign: { xs: 'center', md: 'left' },
+                        zIndex: 2,
                     }}
                 >
-                    Websites that work like apps.
-                </Typography>
-
-                <Typography
-                    component={motion.p}
-                    variants={fadeInUp}
-                    variant="h5"
-                    sx={{
-                        color: 'white',
-                        fontWeight: 300,
-                        textShadow: '1px 1px 3px rgba(0,0,0,0.6)',
-                        mb: 4,
-                    }}
-                >
-                    Built to grow with your business.
-                </Typography>
-
-                <motion.div variants={fadeInUp}>
-                    <Box
+                    <Typography
+                        component={motion.h1}
+                        variants={fadeInUp}
+                        variant="h1"
                         sx={{
-                            display: 'flex',
-                            justifyContent: { xs: 'center', md: 'flex-start' },
-                            mb: { xs: 6, md: 0 }, // ✅ mobile bottom margin
+                            color: 'white',
+                            fontWeight: 600,
+                            textShadow: '1px 1px 4px rgba(0,0,0,0.7)',
+                            mb: 2,
+                            fontSize: { xs: '2.25rem', sm: '3rem', md: '4rem' },
                         }}
                     >
+                        Websites that work like apps.
+                    </Typography>
 
-                    <Button
-                            variant="contained"
-                            size="large"
-                            href="#contact"
+                    <Typography
+                        component={motion.p}
+                        variants={fadeInUp}
+                        variant="h5"
+                        sx={{
+                            color: 'white',
+                            fontWeight: 300,
+                            textShadow: '1px 1px 3px rgba(0,0,0,0.6)',
+                            mb: 4,
+                        }}
+                    >
+                        Built to grow with your business.
+                    </Typography>
+
+                    <motion.div variants={fadeInUp}>
+                        <Box
                             sx={{
-                                backgroundColor: '#F06449',
-                                color: '#fff',
-                                px: 4,
-                                fontWeight: 500,
-                                textTransform: 'none',
-                                borderRadius: 2,
-                                boxShadow: '0 4px 12px rgba(240, 100, 73, 0.35)',
-                                '&:hover': {
-                                    backgroundColor: '#C54B35',
-                                },
+                                display: 'flex',
+                                justifyContent: { xs: 'center', md: 'flex-start' },
+                                mb: { xs: 6, md: 0 }, // ✅ mobile bottom margin
                             }}
                         >
-                            Start My Project
-                        </Button>
-                    </Box>
-                    <Box
-                        sx={{
-                            mt: { xs: 4, md: 6 },
-                            display: 'flex',
-                            justifyContent: { xs: 'center', md: 'flex-start' },
-                            fontSize: '2rem',
-                            color: '#fff',
-                            animation: 'bounce 2s infinite',
-                        }}
-                    >
-                        <KeyboardArrowDownIcon sx={{ fontSize: 32 }} />
-                    </Box>
 
-                </motion.div>
+                            <Button
+                                variant="contained"
+                                size="large"
+                                href="#contact"
+                                sx={{
+                                    backgroundColor: '#F06449',
+                                    color: '#fff',
+                                    px: 4,
+                                    fontWeight: 500,
+                                    textTransform: 'none',
+                                    borderRadius: 2,
+                                    boxShadow: '0 4px 12px rgba(240, 100, 73, 0.35)',
+                                    '&:hover': {
+                                        backgroundColor: '#C54B35',
+                                    },
+                                }}
+                            >
+                                Start My Project
+                            </Button>
+                        </Box>
+                        <Box
+                            sx={{
+                                mt: { xs: 4, md: 6 },
+                                display: 'flex',
+                                justifyContent: { xs: 'center', md: 'flex-start' },
+                                fontSize: '2rem',
+                                color: '#fff',
+                                animation: 'bounce 2s infinite',
+                            }}
+                        >
+                            <KeyboardArrowDownIcon sx={{ fontSize: 32 }} />
+                        </Box>
+
+                    </motion.div>
+                </Box>
             </Box>
-        </Box>
+        </>
     );
 }
