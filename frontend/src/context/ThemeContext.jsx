@@ -3,48 +3,59 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { GlobalStyles } from '@mui/material';
 
-export const ThemeContext = createContext();
+const ThemeContext = createContext();
 
-export const ThemeContextProvider = ({ children }) => {
+const lightModeColors = {
+    primary: '#F06449',
+    primaryDark: '#C54B35',
+    secondary: '#9B2BCB',
+    textPrimary: '#222222',
+    textSecondary: '#5c5c5c',
+    backgroundDefault: '#F2F2F2',
+    backgroundPaper: '#ffffff',
+};
+
+const darkModeColors = {
+    primary: '#D86D50',
+    primaryDark: '#A65D4E',
+    secondary: '#C98C36',
+    textPrimary: '#F5F5F5',
+    textSecondary: '#BBBBBB',
+    backgroundDefault: '#1E1128',
+    backgroundPaper: '#2B1A38',
+};
+
+const ThemeContextProvider = ({ children }) => {
     const [mode, setMode] = useState('light');
 
-    const theme = useMemo(() =>
-        createTheme({
+    const theme = useMemo(() => {
+        const colors = mode === 'light' ? lightModeColors : darkModeColors;
+
+        return createTheme({
             palette: {
                 mode,
                 primary: {
-                    main: '#3A6EA5', // new soft blue
-                    dark: '#2f5a85',
+                    main: colors.primary,
+                    dark: colors.primaryDark,
                 },
                 secondary: {
-                    main: '#F48FB1', // optional warm contrast
+                    main: colors.secondary,
                 },
                 background: {
-                    default: mode === 'light' ? '#f7f9fc' : '#121212',
-                    paper: mode === 'light' ? '#ffffff' : '#1e1e1e',
+                    default: colors.backgroundDefault,
+                    paper: colors.backgroundPaper,
                 },
                 text: {
-                    primary: mode === 'light' ? '#212121' : '#ffffff',
-                    secondary: mode === 'light' ? '#6c757d' : '#bbbbbb',
+                    primary: colors.textPrimary,
+                    secondary: colors.textSecondary,
                 },
             },
             typography: {
                 fontFamily: 'Inter, sans-serif',
-                h1: {
-                    fontWeight: 600,
-                    fontSize: '3rem',
-                },
-                h2: {
-                    fontWeight: 500,
-                    fontSize: '2.25rem',
-                },
-                h3: {
-                    fontWeight: 500,
-                    fontSize: '1.75rem',
-                },
-                body1: {
-                    fontSize: '1rem',
-                },
+                h1: { fontWeight: 600, fontSize: '3rem' },
+                h2: { fontWeight: 500, fontSize: '2.25rem' },
+                h3: { fontWeight: 500, fontSize: '1.75rem' },
+                body1: { fontSize: '1rem' },
             },
             components: {
                 MuiButton: {
@@ -68,18 +79,19 @@ export const ThemeContextProvider = ({ children }) => {
                 MuiLink: {
                     styleOverrides: {
                         root: {
-                            color: '#3A6EA5',
+                            color: colors.secondary,
                             textDecoration: 'none',
                             fontWeight: 500,
                             '&:hover': {
                                 textDecoration: 'underline',
-                                color: '#2f5a85',
+                                color: colors.primaryDark,
                             },
                         },
                     },
                 },
             },
-        }), [mode]);
+        });
+    }, [mode]);
 
     const toggleColorMode = () => {
         setMode((prev) => (prev === 'light' ? 'dark' : 'light'));
@@ -95,4 +107,5 @@ export const ThemeContextProvider = ({ children }) => {
         </ThemeContext.Provider>
     );
 };
-export default ThemeContextProvider;
+
+export { ThemeContext, ThemeContextProvider };

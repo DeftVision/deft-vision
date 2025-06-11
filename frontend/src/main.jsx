@@ -2,17 +2,17 @@ import {StrictMode} from 'react'
 import {createRoot} from 'react-dom/client'
 import './index.css'
 import AppRoutes from './routes.jsx'
-import ThemeContextProvider from './context/ThemeContext';
+import {ThemeContextProvider} from './context/ThemeContext';
 import '@fontsource/poppins/600.css'; // Semi-bold
-import { HelmetProvider } from 'react-helmet-async';
-import { BrowserRouter as Router } from 'react-router-dom'
+import {HelmetProvider} from 'react-helmet-async';
+import {BrowserRouter as Router} from 'react-router-dom'
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
         <ThemeContextProvider>
             <HelmetProvider>
                 <Router>
-                    <AppRoutes />
+                    <AppRoutes/>
                 </Router>
             </HelmetProvider>
         </ThemeContextProvider>

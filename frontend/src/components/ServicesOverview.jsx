@@ -1,39 +1,56 @@
+import React from 'react';
 import {
     Box,
     Container,
     Typography,
-    Paper,
     Button,
 } from '@mui/material';
-import LanguageIcon  from '@mui/icons-material/Language';
-import DomainIcon     from '@mui/icons-material/Domain';
-
-
+import { motion } from 'framer-motion';
+import RocketLaunchRoundedIcon from '@mui/icons-material/RocketLaunchRounded';
+import BusinessCenterRoundedIcon from '@mui/icons-material/BusinessCenterRounded';
 import { Link as RouterLink } from 'react-router-dom';
+
+const MotionCard = motion(Box);
 
 const ServicesOverview = [
     {
-        icon: <LanguageIcon  fontSize="large" color="primary" />,
-        title: 'Standard Web App',
-        description: 'A fast, mobile-friendly site that helps customers find you, builds trust, and grows with your business.',
-        text: 'Learn More',
-        link: '/services/standard-web-app'
-     },
+        icon: <RocketLaunchRoundedIcon fontSize="large" color="primary" />,
+        title: 'Web Application',
+        description: 'A fast, mobile-friendly site tailored to your brand. SEO-ready, built for performance, and fully yours to own.',
+        link: '/services/standard-web-app',
+        text: 'See What’s Included',
+    },
     {
-        icon: <DomainIcon     fontSize="large" color="primary" />,
-        title: 'Stride',
-        description: 'A secure, branded platform to run your business.',
-        text: 'Coming Soon',
-        link: '/'
+        icon: <BusinessCenterRoundedIcon fontSize="large" color="primary" />,
+        title: 'Stride Platform',
+        description: 'A secure, scalable platform with dashboards, form builders, and role-based access — designed to power the way your business operates.',
+        link: '/services/stride',
+        text: 'Explore the Platform',
     },
 ];
 
+const fadeInUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: (i) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+            delay: i * 0.2,
+            duration: 0.6,
+            ease: 'easeOut',
+        },
+    }),
+};
+
 export default function Services() {
     return (
-        <Box id="services" sx={{ py: 8, backgroundColor: 'background.paper' }}>
+        <Box id="services" sx={{ py: 10, backgroundColor: 'background.paper' }}>
             <Container maxWidth="lg">
                 <Typography variant="h2" align="center" gutterBottom>
-                    Build Your Online Presence
+                    Choose Your Solution
+                </Typography>
+                <Typography variant="subtitle1" align="center" color="text.secondary" sx={{ mb: 6 }}>
+                    Whether you need a fast, beautiful website or a powerful platform to run your business — we’ve got you covered.
                 </Typography>
 
                 <Box
@@ -42,39 +59,48 @@ export default function Services() {
                         flexWrap: 'wrap',
                         justifyContent: 'center',
                         gap: 4,
-                        mt: 4,
                     }}
                 >
                     {ServicesOverview.map((service, index) => (
-                        <Paper
-                            key={index}
-                            elevation={2}
+                        <MotionCard
+                            key={service.title}
+                            custom={index}
+                            variants={fadeInUp}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.3 }}
+                            whileHover={{
+                                y: -6,
+                                boxShadow: '0px 12px 24px rgba(0, 0, 0, 0.1)',
+                                transition: { duration: 0.3 },
+                            }}
                             sx={{
-                                cursor: 'default',
-                                flex: '1 1 260px',
-                                maxWidth: 320,
                                 p: 4,
+                                borderRadius: 3,
+                                maxWidth: 340,
+                                flex: '1 1 300px',
                                 textAlign: 'center',
-                                transition: 'all 0.25s ease-in-out',
-                                '&:hover': {
-                                    transform: 'translateY(-4px)',
-                                    boxShadow: 4,
-                                },
+                                backgroundColor: '#fff',
+                                border: '1px solid #e0e0e0',
+                                transition: 'all 0.3s ease-in-out',
                             }}
                         >
-                            {service.icon}
+                            <Box>{service.icon}</Box>
                             <Typography variant="h6" sx={{ mt: 2, mb: 1 }}>
                                 {service.title}
                             </Typography>
-                            <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+                            <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
                                 {service.description}
                             </Typography>
-                            {service.link && (
-                                <RouterLink to={service.link} style={{ textDecoration: 'none' }}>
-                                    <Button variant='outlined'>{service.text}</Button>
-                                </RouterLink>
-                            )}
-                        </Paper>
+                            <Button
+                                component={RouterLink}
+                                to={service.link}
+                                variant="outlined"
+                                color="primary"
+                            >
+                                {service.text}
+                            </Button>
+                        </MotionCard>
                     ))}
                 </Box>
             </Container>

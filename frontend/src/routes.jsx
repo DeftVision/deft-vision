@@ -3,6 +3,9 @@ import App from './App.jsx';
 import {Privacy, Terms } from './legal/index';
 import ScrollManager from './utils/ScrollManager'
 import { BusinessWebApp } from './pages/index'
+import DemoPage from "./pages/DemoPage.jsx";
+
+
 
 
 export default function AppRoutes() {

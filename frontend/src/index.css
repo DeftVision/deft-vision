@@ -1,13 +1,13 @@
+/* Base HTML and Body Styles */
 html, body {
   margin: 0;
   padding: 0;
   text-align: center;
   box-sizing: border-box;
-
   scroll-behavior: smooth;
 }
 
-
+/* Animation: Fade In Up (used in manual CSS animations) */
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
@@ -19,6 +19,7 @@ html, body {
   transform: translateY(0);
 }
 
+/* Transition delays for staggered animation effects */
 .delay-0 {
   transition-delay: 0s;
 }
@@ -31,3 +32,27 @@ html, body {
   transition-delay: 0.5s;
 }
 
+/* Gradient Shift Animation (unused right now, but still here if needed) */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 👇 New: Bounce animation for scroll-down indicator */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-6px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Optional: Apply this class if not using sx prop for animation */
+.bounce {
+  animation: bounce 2s infinite;
+}
