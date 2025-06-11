@@ -11,7 +11,7 @@ const lightModeColors = {
     secondary: '#9B2BCB',
     textPrimary: '#222222',
     textSecondary: '#5c5c5c',
-    backgroundDefault: '#FFF6F1',
+    backgroundDefault: '#F2F2F2',
     backgroundPaper: '#ffffff',
 };
 
