@@ -14,7 +14,7 @@ export default function AppRoutes() {
         <ScrollManager />
             <Routes>
                 <Route path="/" element={<App />} />
-                <Route path="/services/standard-web-app" element={<BusinessWebApp /> } />
+                <Route path="/services/web-app" element={<BusinessWebApp /> } />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
             </Routes>

@@ -6,38 +6,46 @@ import {
     Button,
 } from '@mui/material';
 import { motion } from 'framer-motion';
-import RocketLaunchRoundedIcon from '@mui/icons-material/RocketLaunchRounded';
-import BusinessCenterRoundedIcon from '@mui/icons-material/BusinessCenterRounded';
+import LaunchIcon from '@mui/icons-material/Launch';
+import LayersIcon from '@mui/icons-material/Layers';
+import LockOpenIcon from '@mui/icons-material/LockOpen';
 import { Link as RouterLink } from 'react-router-dom';
 
 const MotionCard = motion(Box);
 
 const ServicesOverview = [
     {
-        icon: <RocketLaunchRoundedIcon fontSize="large" color="primary" />,
-        title: 'Web Application',
-        description: 'A fast, mobile-friendly site tailored to your brand. SEO-ready, built for performance, and fully yours to own.',
-        link: '/services/standard-web-app',
-        text: 'See What’s Included',
+        icon: <LaunchIcon fontSize="large" color="primary" />,
+        title: 'Single-Page App',
+        description: 'A fast, mobile-first page with everything you need to get online. SEO-ready, clean, and optimized.',
+        link: '/services/web-app#tier1',
+        text: 'Explore Tier 1',
     },
     {
-        icon: <BusinessCenterRoundedIcon fontSize="large" color="primary" />,
-        title: 'Stride Platform',
-        description: 'A secure, scalable platform with dashboards, form builders, and role-based access — designed to power the way your business operates.',
-        link: '/services/stride',
-        text: 'Explore the Platform',
+        icon: <LayersIcon fontSize="large" color="primary" />,
+        title: 'Multi-Page Application',
+        description: 'Add extra pages like About, Contact, and Services — perfect for growing visibility and content.',
+        link: '/services/web-app#tier2',
+        text: 'Explore Tier 2',
+    },
+    {
+        icon: <LockOpenIcon fontSize="large" color="primary" />,
+        title: 'Web App + Backend',
+        description: 'Includes secure login, database support, and custom logic — ideal for data-heavy needs.',
+        link: '/services/web-app#tier3',
+        text: 'Explore Tier 3',
     },
 ];
 
 const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0, y: 20 },
     visible: (i) => ({
         opacity: 1,
         y: 0,
         transition: {
-            delay: i * 0.2,
+            delay: i * 0.15,
             duration: 0.6,
-            ease: 'easeOut',
+            ease: [0.25, 0.8, 0.25, 1],
         },
     }),
 };
@@ -47,10 +55,10 @@ export default function Services() {
         <Box id="services" sx={{ py: 10, backgroundColor: 'background.paper' }}>
             <Container maxWidth="lg">
                 <Typography variant="h2" align="center" gutterBottom>
-                    Choose Your Solution
+                    Choose Your Tier
                 </Typography>
                 <Typography variant="subtitle1" align="center" color="text.secondary" sx={{ mb: 6 }}>
-                    Whether you need a fast, beautiful website or a powerful platform to run your business — we’ve got you covered.
+                    From simple sites to fully powered platforms, we’ll help you launch the right solution for your business.
                 </Typography>
 
                 <Box
@@ -70,9 +78,8 @@ export default function Services() {
                             whileInView="visible"
                             viewport={{ once: true, amount: 0.3 }}
                             whileHover={{
-                                y: -6,
-                                boxShadow: '0px 12px 24px rgba(0, 0, 0, 0.1)',
-                                transition: { duration: 0.3 },
+                                scale: 1.03,
+                                transition: { duration: 0.25, ease: 'easeOut' },
                             }}
                             sx={{
                                 p: 4,
@@ -82,7 +89,10 @@ export default function Services() {
                                 textAlign: 'center',
                                 backgroundColor: '#fff',
                                 border: '1px solid #e0e0e0',
-                                transition: 'all 0.3s ease-in-out',
+                                transition: 'transform 0.25s ease-out, box-shadow 0.25s ease-out',
+                                '&:hover': {
+                                    boxShadow: '0px 10px 24px rgba(0, 0, 0, 0.08)',
+                                },
                             }}
                         >
                             <Box>{service.icon}</Box>
