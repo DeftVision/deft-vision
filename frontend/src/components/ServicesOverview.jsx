@@ -17,7 +17,7 @@ const ServicesOverview = [
         icon: <RocketLaunchRoundedIcon fontSize="large" color="primary" />,
         title: 'Web Application',
         description: 'A fast, mobile-friendly site tailored to your brand. SEO-ready, built for performance, and fully yours to own.',
-        link: '/services/standard-web-app',
+        link: '/services/web-app',
         text: 'See What’s Included',
     },
     {

@@ -1,0 +1,147 @@
+import {Box, Button, Container, Stack, Typography} from '@mui/material';
+import {Footer} from '../components/index.js';
+import PricingSection from './PricingSection';
+import BackToTop from '../layouts/BackToTop.jsx';
+import {Helmet} from "react-helmet-async";
+
+const features = [
+    {
+        title: "We do all the building",
+        description: "Focus on your business, no need to waste time learning a DIY platform.",
+    },
+    {
+        title: "Look Great Everywhere",
+        description: "Your site works beautifully on phones, tablets, and desktops.",
+    },
+    {
+        title: "Yours to Keep, Forever",
+        description: "You get full ownership of your code to expand, change, and host as you please.",
+    },
+    {
+        title: "A Web App That Grows With You",
+        description: "We’ll help you choose the right host that will allow your web application to grow as you do.",
+    }
+];
+
+export default function WebApp() {
+    return (
+        <>
+            <Helmet>
+                <title>Standard Web App | Deft Vision</title>
+                <meta name="description"
+                      content="Launch a professional, lead-focused business web app. No subscriptions. You own the code."/>
+                <meta property="og:title" content="Standard Web Application | Deft Vision"/>
+                <meta property="og:description"
+                      content="Launch a professional, lead-focused business web app. No subscriptions. You own the code."/>
+                <meta property="og:type" content="website"/>
+                <meta property="og:url" content="https://deftvision.io/services/Standard-web-app"/>
+                <meta property="og:image" content="/og-cover.png"/>
+                <meta name="twitter:card" content="summary_large_image"/>
+                <meta name="twitter:title" content="Business Web App | Deft Vision"/>
+                <meta name="twitter:description"
+                      content="Launch a professional, lead-focused business web app. No subscriptions. You own the code."/>
+                <meta name="twitter:image" content="/og-cover.png"/>
+            </Helmet>
+
+            <Box sx={{ py: 4, display: 'flex', justifyContent: 'center' }}>
+                <a href="/">
+                    <img src="/images/DarkDeftVisionLogo.svg" alt="Deft Vision logo" style={{ height: 56 }} />
+                </a>
+            </Box>
+
+            <Container maxWidth="md" sx={{ py: 10, mb: 8 }}>
+                <Stack spacing={10} alignItems="center" textAlign="center">
+
+                    {/* Hero */}
+                    <Stack spacing={2}>
+                        <Typography variant="h3" fontWeight={600}>
+                            Web Page Application
+                        </Typography>
+                        <Typography variant="subtitle1" color="text.secondary" maxWidth="sm" mx="auto">
+                            A frontend web app built fast, mobile-ready, and yours forever.
+                        </Typography>
+                        <Box>
+                            <Button variant="contained" size='large' href="/#contact">
+                                Start My Project
+                            </Button>
+                        </Box>
+                    </Stack>
+
+                    {/* Features */}
+                    {/*<Stack spacing={3} width="100%" sx={{ py: 8 }}>
+                        <Typography variant="h5" fontWeight={600} textAlign="center">
+                            What’s Included
+                        </Typography>
+                        <Box
+                            display="flex"
+                            flexWrap="wrap"
+                            justifyContent="center"
+                            gap={3}
+                        >
+                            {features.map(({ title, description }, i) => (
+                                <Box key={i} display="flex" alignItems="flex-start" width={{ xs: '100%', sm: '55%' }} maxWidth="400px">
+                                    <Box>
+                                        <Typography variant="body2" fontWeight={600}>
+                                            {title}
+                                        </Typography>
+                                        <Typography variant="body2" color="text.secondary">
+                                            {description}
+                                        </Typography>
+                                    </Box>
+                                </Box>
+                            ))}
+                        </Box>
+                    </Stack>*/}
+
+                    {/* Pricing Cards Section
+                    <Box sx={{ mb: 6 }}>
+                        <PricingSection />
+                    </Box>*/}
+
+                    {/* Tier 1 SPA Section */}
+                    <Box id="tier1-details" textAlign="left" width="100%" maxWidth="700px">
+                        <Typography variant="h5" fontWeight={600} gutterBottom>
+                            Tier 1: Single-Page App
+                        </Typography>
+                        <Typography>
+                            This package includes a one-page website or web application built to load fast and look great on all devices. It comes with boilerplate terms of service and privacy policy pages, basic SEO meta tags, and email or ticket-based support.
+                        </Typography>
+                        <Typography>
+                            It's ideal for home-based businesses, small service providers, and solo founders who need a clean, mobile-ready online presence.
+                        </Typography>
+                    </Box>
+
+                    {/* Tier 2 MPA Section */}
+                    <Box id="tier2-details" textAlign="left" width="100%" maxWidth="700px">
+                        <Typography variant="h5" fontWeight={600} gutterBottom>
+                            Tier 2: Multi-Page Application
+                        </Typography>
+                        <Typography>
+                            Everything from Tier 1, plus additional pages like About, Services, and Contact. Includes autogenerated SEO files and Google Search Console setup support for better visibility on search engines.
+                        </Typography>
+                        <Typography>
+                            Best for service-based businesses with more content or locations.
+                        </Typography>
+                    </Box>
+
+                    {/* Tier 3 Backend Section */}
+                    <Box id="tier3-details" textAlign="left" width="100%" maxWidth="700px">
+                        <Typography variant="h5" fontWeight={600} gutterBottom>
+                            Tier 3: Full Web App with Backend
+                        </Typography>
+                        <Typography>
+                            Includes everything from Tier 2, plus a backend with database support, secure login, and admin-only access for managing content or user submissions.
+                        </Typography>
+                        <Typography>
+                            Perfect for professionals who need HIPAA-ready infrastructure, custom form data handling, or client portals.
+                        </Typography>
+                    </Box>
+
+                </Stack>
+            </Container>
+
+            <Footer />
+            <BackToTop />
+        </>
+    );
+}
