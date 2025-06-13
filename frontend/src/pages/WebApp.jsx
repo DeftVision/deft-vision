@@ -9,7 +9,7 @@ import { useEffect } from 'react';
 const tiers = [
     {
         id: 'tier1',
-        title: 'Single-Page App',
+        title: 'Single-Page Application',
         description: 'A fast, mobile-ready one-pager built with boilerplate policies, SEO tags, and support.',
         bullets: [
             'Fast-loading and mobile-optimized',
