@@ -71,12 +71,13 @@ export default function WebApp() {
                 <meta property="og:title" content="Standard Web Application | Deft Vision" />
                 <meta property="og:description" content="Launch a professional, lead-focused business web app. No subscriptions. You own the code." />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://deftvision.io/services/Standard-web-app" />
-                <meta property="og:image" content="/og-cover.png" />
+                <meta property="og:url" content="https://deftvision.io/services/web-app" />
+                <meta property="og:image" content="https://deftvision.io/og-cover.png" />
                 <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:title" content="Business Web App | Deft Vision" />
-                <meta name="twitter:description" content="Launch a professional, lead-focused business web app. No subscriptions. You own the code." />
-                <meta name="twitter:image" content="/og-cover.png" />
+                <meta name="twitter:title" content="Web Apps For Your Business | Deft Vision" />
+                <meta name="twitter:description" content="Web applications that grow with your business. You own the code." />
+                <meta name="twitter:image" content="https://deftvision.io/og-cover.png" />
+
             </Helmet>
 
             <Box sx={{ py: 4, display: 'flex', justifyContent: 'center' }}>
