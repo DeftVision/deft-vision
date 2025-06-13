@@ -30,7 +30,7 @@ const ServicesOverview = [
     },
     {
         icon: <LockOpenIcon fontSize="large" color="primary" />,
-        title: 'Web App + Backend',
+        title: 'Multi-Page App + Backend',
         description: 'Includes secure login, database support, and custom logic — ideal for data-heavy needs.',
         link: '/services/web-app#tier3',
         text: 'Explore Tier 3',

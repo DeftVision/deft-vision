@@ -34,14 +34,14 @@ const tiers = [
         ],
         note: 'Growing service businesses with more content or locations.',
         price: {
-            original: "$1,499",
-            discounted: "$1,199",
+            original: "$1,299",
+            discounted: "$899",
             until: "August 1st"
         }
     },
     {
         id: 'tier3',
-        title: 'Full Web App with Backend',
+        title: 'Multi-Page Application + Backend',
         description: 'Includes backend with database, admin login, and secure data handling.',
         bullets: [
             'Everything in the Multi-Page Application',
@@ -51,7 +51,7 @@ const tiers = [
         note: 'Professionals with data-heavy forms, portals, or admin needs.',
         price: {
             original: "$2,999",
-            discounted: "$1,599",
+            discounted: "$1,399",
             until: "August 1st",
             starting: true
         }
