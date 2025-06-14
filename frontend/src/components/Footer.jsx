@@ -36,14 +36,12 @@ function Footer() {
 
                     <Divider sx={{width: '100%', maxWidth: 400}}/>
 
-                    <Stack direction="row" spacing={2}>
-                        <Link href="/terms" underline="hover" color="inherit" rel="noopener noreferrer">
-                            Terms of Service
-                        </Link>
-                        <Link href="/privacy" underline="hover" color="inherit">
-                            Privacy Policy
-                        </Link>
+                    <Stack direction="row" spacing={2} flexWrap="wrap" justifyContent="center">
+                        <Link href="/terms" underline="hover" color="inherit">Terms of Service</Link>
+                        <Link href="/privacy" underline="hover" color="inherit">Privacy Policy</Link>
+                        <Link href="/blog" underline="hover" color="inherit">Blog</Link>
                     </Stack>
+
 
 
                     <Typography variant="body2" color="text.secondary" sx={{mt: 2}}>
