@@ -31,7 +31,7 @@ function Footer() {
                     </a>
 
                     <Typography variant="subtitle1">
-                        Professional Web Apps.
+                        Built to grow with your business.
                     </Typography>
 
                     <Divider sx={{width: '100%', maxWidth: 400}}/>
