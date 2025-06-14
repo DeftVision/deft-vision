@@ -5,7 +5,8 @@ const today = new Date().toISOString().split('T')[0];
 
 const links = [
     { url: '/', changefreq: 'weekly', priority: 1.0, lastmod: today },
-    { url: '/services/standard-web-app', changefreq: 'weekly', priority: 0.8, lastmod: today },
+    { url: '/services/web-app', changefreq: 'weekly', priority: 0.8, lastmod: today },
+    { url: '/blog', changefreq: 'weekly', priority: 0.7, lastmod: today },
     { url: '/privacy', changefreq: 'monthly', priority: 0.6, lastmod: today },
     { url: '/terms', changefreq: 'monthly', priority: 0.6, lastmod: today }
 ];
