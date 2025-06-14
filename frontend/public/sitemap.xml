@@ -12,6 +12,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://deftvision.io/blog</loc>
+    <lastmod>2025-06-13</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://deftvision.io/privacy</loc>
     <lastmod>2025-06-13</lastmod>
     <priority>0.7</priority>
