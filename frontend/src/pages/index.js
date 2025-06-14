@@ -1,2 +1,2 @@
-export { default as BusinessWebApp } from './WebApp.jsx'
+export { default as WebApp } from './WebApp.jsx'
 
