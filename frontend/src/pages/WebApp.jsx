@@ -51,7 +51,7 @@ const tiers = [
         note: 'Professionals with data-heavy forms, portals, or admin needs.',
         price: {
             original: "$2,999",
-            discounted: "$1,399",
+            discounted: "$2,299",
             until: "August 1st",
             starting: true
         }
@@ -77,7 +77,6 @@ export default function WebApp() {
                 <meta name="twitter:title" content="Web Apps For Your Business | Deft Vision" />
                 <meta name="twitter:description" content="Web applications that grow with your business. You own the code." />
                 <meta name="twitter:image" content="https://deftvision.io/og-cover.png" />
-
             </Helmet>
 
             <Box sx={{ py: 4, display: 'flex', justifyContent: 'center' }}>
@@ -95,7 +94,12 @@ export default function WebApp() {
                         <Typography variant="subtitle1" color="text.secondary" maxWidth="sm" mx="auto">
                             A frontend web app built fast, mobile-ready, and yours forever.
                         </Typography>
-                        <Button variant="contained" size="large" href="/#contact">
+                        <Button
+                            variant="contained"
+                            size="large"
+                            href="/#contact"
+                            sx={{ backgroundColor: '#3DAD4F', '&:hover': { backgroundColor: '#36a343' } }}
+                        >
                             Start My Project
                         </Button>
                     </Stack>
@@ -114,7 +118,7 @@ export default function WebApp() {
                                 style={{ width: '100%', maxWidth: 700 }}
                             >
                                 <Box textAlign="left">
-                                    <Typography variant="h5" fontWeight={600} gutterBottom>
+                                    <Typography variant="h5" fontWeight={600} gutterBottom sx={{ color: '#3DAD4F' }}>
                                         {tier.title}
                                     </Typography>
                                     <Typography variant="body1" color="text.secondary" gutterBottom>
@@ -124,7 +128,7 @@ export default function WebApp() {
                                     <Stack spacing={1} mt={2} mb={2}>
                                         {tier.bullets.map((bullet, i) => (
                                             <Stack direction="row" alignItems="center" spacing={1} key={i}>
-                                                <CheckCircleIcon fontSize="small" color="primary" />
+                                                <CheckCircleIcon fontSize="small" sx={{ color: '#3DAD4F' }} />
                                                 <Typography variant="body2">{bullet}</Typography>
                                             </Stack>
                                         ))}
@@ -134,7 +138,6 @@ export default function WebApp() {
                                         {tier.note}
                                     </Typography>
 
-                                    {/* Pricing block with conditional logic */}
                                     <Box sx={{ mb: 1 }}>
                                         <Typography
                                             variant="body2"
