@@ -35,7 +35,10 @@ jobs:
       - name: Build project
         working-directory: frontend
         run: npm run build
-      
+
+      - name: Copy sitemap.xml into dist
+        working-directory: frontend
+        run: cp public/sitemap.xml dist/sitemap.xml
 
       - name: Set up SSH
         uses: webfactory/ssh-agent@v0.7.0
