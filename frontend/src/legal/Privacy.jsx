@@ -1,9 +1,7 @@
-import { Container, Typography, Button, Stack, Paper, Link } from '@mui/material';
+import { Container, Typography, Button, Stack, Paper, Link, Box } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import Layout from '../layouts/Layout.jsx';
-
 import BackToTop from '../layouts/BackToTop.jsx';
-
+import {Footer} from "../components/index.js";
 
 export default function Privacy() {
     const navigate = useNavigate();
@@ -18,8 +16,9 @@ export default function Privacy() {
             title: '2. How It’s Handled',
             content: (
                 <>
-                    Submitted information is sent directly to Deft Vision via <strong>EmailJS</strong>. It is not stored or processed elsewhere by Deft Vision.
-                    You can review EmailJS’s privacy policy here:&nbsp;
+                    Submitted information is sent directly to Deft Vision via a secure email submission service.
+                    No data is stored or processed elsewhere by Deft Vision.
+                    You can review the privacy policy of our submission service here:&nbsp;
                     <Link
                         href="https://www.emailjs.com/legal/privacy-policy/"
                         target="_blank"
@@ -55,7 +54,13 @@ export default function Privacy() {
     ];
 
     return (
-        <Layout>
+        <>
+            <Box sx={{ py: 4, display: 'flex', justifyContent: 'center' }}>
+                <a href="/">
+                    <img src="/images/DarkDeftVisionLogo.svg" alt="Deft Vision logo" style={{ height: 56 }} />
+                </a>
+            </Box>
+
             <Container maxWidth="md" sx={{ py: 10 }}>
                 <Stack spacing={5}>
                     <Typography variant="h4" fontWeight={600}>
@@ -63,7 +68,8 @@ export default function Privacy() {
                     </Typography>
 
                     <Typography variant="body1" color="text.secondary">
-                        We respect your privacy. Here’s what you need to know:
+                        This policy applies to visitors of the deftvision.io website.<br />
+                        Effective: June 17, 2025
                     </Typography>
 
                     <Stack spacing={4}>
@@ -84,7 +90,9 @@ export default function Privacy() {
                     </Button>
                 </Stack>
             </Container>
+
+            <Footer />
             <BackToTop />
-        </Layout>
+        </>
     );
 }

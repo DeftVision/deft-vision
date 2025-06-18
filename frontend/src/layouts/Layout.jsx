@@ -34,8 +34,8 @@ function HideOnScroll({children}) {
 const navItems = [
     {label: 'Home', href: '/', anchor: false},
     {label: 'Services', href: '#services', anchor: true},
-    {label: 'Portfolio', href: '#portfolio', anchor: true},
     {label: 'Contact', href: '#contact', anchor: true},
+    {label: 'Blog', href: '/blog', anchor: true},
 ];
 
 export default function Layout({children}) {

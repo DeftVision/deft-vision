@@ -4,7 +4,6 @@ import DynamicDeftLogo from '../assets/DynamicDeftLogo.svg?react';
 function Footer() {
     return (
         <>
-
             <Box
                 component="footer"
                 sx={{
