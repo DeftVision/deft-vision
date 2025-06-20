@@ -11,16 +11,24 @@ exports .devLogin = async (req, res) => {
             })
         }
 
-        const developer = await developerModel.findOne({ email: { $regex: new RegExp("^" + email + "$", "i") } }).select("+password firstName lastName email role");
+        const developer = await developerModel
+            .findOne({ email: { $regex: new RegExp("^" + email + "$", "i") } })
+            .select("+password");
 
         if(!developer) {
             return res.status(400).json({ message: 'You shouldn\'t be here.' })
         }
 
+        console.log("Developer:", developer);
+        console.log("Password to compare:", password);
+
+
         const isMatch = await bcrypt.compare(password, developer.password);
         if(!isMatch) {
             return res.status(400).json({ message: 'try again'})
         }
+
+        res.status(200).json({ message: 'Login successful' });
 
     } catch (error) { res.status(500).json({ message: "Server error", error: error.message }); }
 }
