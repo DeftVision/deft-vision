@@ -138,7 +138,7 @@ export default function Hero() {
                         }}
                     >
                         <a href='#pricing' sx={{ textDecoration: 'none' }}>
-                            <KeyboardArrowDownIcon sx={{ fontSize: 36 }} />
+                            <KeyboardArrowDownIcon sx={{ fontSize: 36, color: '#ffffff' }} />
                         </a>
                     </Box>
                 </motion.div>
