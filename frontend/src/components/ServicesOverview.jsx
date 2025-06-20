@@ -3,57 +3,64 @@ import {
     Box,
     Container,
     Typography,
+    Stack,
     Button,
+    Collapse,
 } from '@mui/material';
-import { motion } from 'framer-motion';
 import LaunchIcon from '@mui/icons-material/Launch';
 import LayersIcon from '@mui/icons-material/Layers';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
-const MotionCard = motion(Box);
-
-const ServicesOverview = [
+const services = [
     {
         icon: <LaunchIcon fontSize="large" color="primary" />,
         title: 'Starter Site',
-        description: 'A clean, mobile-first site with everything you need to get online.',
-        details: 'Includes 1-page layout, your brand colors, contact links, and SEO basics. Delivered in 3–5 days.',
         price: '$300',
+        description: 'Built to go live fast. Clean code, built to scale and expand smart when you\'re ready.',
+        details: [
+            'Responsive layout that works on all modern devices',
+            'Accessible structure with readable contrast and keyboard navigation',
+            'Fast-loading images and lightweight code',
+            'Flexible section layout ready to scale or repurpose',
+        ],
     },
     {
         icon: <LayersIcon fontSize="large" color="primary" />,
         title: 'Custom Site',
-        description: 'Need more pages or a custom layout?',
-        details: 'Includes up to 3 pages (Home, About, Contact), custom layout and styles, and structured metadata for SEO.',
         price: '$600',
+        description: 'For growing businesses that need extra pages and a design tailored to their brand’s look and feel.',
+        details: [
+            'Up to 3 additional pages of custom content',
+            'Design matched to your brand colors and typography',
+            'Mobile-first layout with responsive scaling',
+            'Ready for add-ons like forms, galleries, or bookings',
+        ],
+
     },
     {
         icon: <LockOpenIcon fontSize="large" color="primary" />,
-        title: 'Managed Hosting',
-        description: 'Includes hosting, updates, and secure infrastructure.',
-        details: 'Your site lives on AWS with domain, SSL, and form support. Cancel anytime. Great for growing sites and backend needs.',
-        price: '$50/month',
+        title: 'Hosting',
+        price: '',
+        description: 'Hosting that works with your existing setup, or we’ll help you get launched with reliable infrastructure and support.',
+        details: [
+            'Connect your existing domain or get help setting up a new one',
+            'Secure SSL setup and monitoring',
+            'Supports custom features like forms and protected areas',
+            'Flexible infrastructure that can scale with your needs',
+        ],
     },
 ];
 
-const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i) => ({
-        opacity: 1,
-        y: 0,
-        transition: {
-            delay: i * 0.15,
-            duration: 0.6,
-            ease: [0.25, 0.8, 0.25, 1],
-        },
-    }),
-};
+export default function ServicesSection() {
+    const [expanded, setExpanded] = useState(() => services.map(() => false));
 
-export default function Services() {
-    const [selectedIndex, setSelectedIndex] = useState(null);
-
-    const handleCardClick = (index) => {
-        setSelectedIndex(index === selectedIndex ? null : index);
+    const toggleDetails = (index) => {
+        setExpanded((prev) => {
+            const next = [...prev];
+            next[index] = !next[index];
+            return next;
+        });
     };
 
     return (
@@ -62,65 +69,66 @@ export default function Services() {
                 <Typography variant="h2" align="center" gutterBottom>
                     What You Get
                 </Typography>
-                <Typography variant="subtitle1" align="center" color="text.secondary" sx={{ mb: 6 }}>
-                    Simple options for fast, modern websites — with optional hosting and support if you want it.
+                <Typography variant="body1" align="center" sx={{ maxWidth: 600, mx: 'auto', mb: 6 }}>
+                    All sites come mobile-optimized, accessible, and SEO optimized. Every build includes colors, fonts, and a theme to match your brand.
                 </Typography>
 
-                <Box
-                    sx={{
-                        display: 'flex',
-                        flexWrap: 'wrap',
-                        justifyContent: 'center',
-                        gap: 4,
-                    }}
-                >
-                    {ServicesOverview.map((service, index) => (
-                        <Box key={service.title} sx={{ flex: '1 1 300px' }}>
-                            <MotionCard
-                                onClick={() => handleCardClick(index)}
-                                custom={index}
-                                variants={fadeInUp}
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, amount: 0.3 }}
-                                whileHover={{
-                                    scale: 1.03,
-                                    transition: { duration: 0.25, ease: 'easeOut' },
-                                }}
-                                sx={{
-                                    p: 4,
-                                    borderRadius: 3,
-                                    textAlign: 'center',
-                                    backgroundColor: '#fff',
-                                    border: '1px solid #e0e0e0',
-                                    cursor: 'pointer',
-                                    boxShadow: selectedIndex === index ? '0px 10px 24px rgba(0,0,0,0.12)' : 'none',
-                                }}
-                            >
-                                <Box>{service.icon}</Box>
-                                <Typography variant="h6" sx={{ mt: 2, mb: 1 }}>
+                <Stack spacing={4} direction={{ xs: 'column', md: 'row' }} justifyContent="center" alignItems="stretch">
+                    {services.map((service, index) => (
+                        <Box
+                            key={service.title}
+                            sx={{
+                                p: 4,
+                                borderRadius: 3,
+                                border: '1px solid #e0e0e0',
+                                backgroundColor: '#fff',
+                                flex: '1 1 300px',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'space-between',
+                            }}
+                        >
+                            <Box sx={{ mb: 2 }}>
+                                {service.icon}
+                                <Typography variant="h5" sx={{ mt: 2 }}>
                                     {service.title}
                                 </Typography>
-                                <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
+                                <Typography variant="h6" sx={{ mt: 1 }}>
+                                    {service.price}
+                                </Typography>
+                                <Typography variant="body2" sx={{ mt: 2 }}>
                                     {service.description}
                                 </Typography>
-                            </MotionCard>
+                            </Box>
 
-                            {selectedIndex === index && (
-                                <Box sx={{ mt: 2, p: 3, border: '1px solid #ccc', borderRadius: 2, backgroundColor: '#f9f9f9' }}>
-                                    <Typography variant="body1" gutterBottom>
-                                        {service.details}
-                                    </Typography>
-                                    <Typography variant="h6" sx={{ mb: 2 }}>
-                                        Price: {service.price}
-                                    </Typography>
-                                    <Button variant="contained" color="primary" href="/start">
-                                        Start This Project
-                                    </Button>
+                            <Collapse in={expanded[index]}>
+                                <Box sx={{ mt: 2 }}>
+                                    {service.details.map((item, i) => (
+                                        <Box key={i} sx={{ display: 'flex', alignItems: 'flex-start', mb: 1 }}>
+                                            <CheckCircleOutlineIcon fontSize="small" color="primary" sx={{ mt: '2px', mr: 1 }} />
+                                            <Typography variant="body2">{item}</Typography>
+                                        </Box>
+                                    ))}
                                 </Box>
-                            )}
+                            </Collapse>
+
+                            <Button
+                                onClick={() => toggleDetails(index)}
+                                variant="text"
+                                size="small"
+                                fullWidth
+                                sx={{ mt: 2 }}
+                            >
+                                {expanded[index] ? 'Hide Details' : "What's Included"}
+                            </Button>
                         </Box>
                     ))}
+                </Stack>
+
+                <Box textAlign="center" mt={6}>
+                    <Button variant="contained" size="large" href="/#contact">
+                        Start Your Project
+                    </Button>
                 </Box>
             </Container>
         </Box>
