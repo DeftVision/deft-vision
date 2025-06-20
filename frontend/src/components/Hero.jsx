@@ -96,7 +96,7 @@ export default function Hero() {
                         mb: 4,
                     }}
                 >
-                    Built to grow with your business.
+                    No templates. No subscriptions. Just clean, mobile-first sites you own.
                 </Typography>
 
                 <motion.div variants={fadeInUp}>
@@ -127,7 +127,6 @@ export default function Hero() {
                             Start My Project
                         </Button>
                     </Box>
-
                     <Box
                         sx={{
                             mt: { xs: 4, md: 6 },
@@ -138,7 +137,9 @@ export default function Hero() {
                             animation: 'bounce 2s infinite',
                         }}
                     >
-                        <KeyboardArrowDownIcon sx={{ fontSize: 36 }} />
+                        <a href='#pricing' sx={{ textDecoration: 'none' }}>
+                            <KeyboardArrowDownIcon sx={{ fontSize: 36, color: '#ffffff' }} />
+                        </a>
                     </Box>
                 </motion.div>
             </Box>
