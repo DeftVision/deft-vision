@@ -96,7 +96,7 @@ export default function Hero() {
                         mb: 4,
                     }}
                 >
-                    No templates. No subscriptions. Just clean, mobile-first sites you own.
+                    Fast, scalable sites built with real app architecture, ready to grow with your business.
                 </Typography>
 
                 <motion.div variants={fadeInUp}>
@@ -137,7 +137,7 @@ export default function Hero() {
                             animation: 'bounce 2s infinite',
                         }}
                     >
-                        <a href='#pricing' sx={{ textDecoration: 'none' }}>
+                        <a href='#services' sx={{ textDecoration: 'none' }}>
                             <KeyboardArrowDownIcon sx={{ fontSize: 36, color: '#ffffff' }} />
                         </a>
                     </Box>
