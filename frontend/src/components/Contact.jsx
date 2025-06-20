@@ -43,10 +43,10 @@ function Contact() {
             >
                 <Container maxWidth='sm'>
                     <Stack spacing={2}>
-                        <Typography variant="h5" component='h2'>Position your business for success.</Typography>
+                        <Typography variant="h5" component='h2'>Let’s make your business easy to find.</Typography>
 
                         <Typography variant="body2" color="text.secondary">
-                            We'll handle this part - you focus on what you do best.
+                            Whether you’re just starting or ready to grow, we’ll build a site that works for you.
                         </Typography>
 
                         <Box component='form' onSubmit={sendEmail}>
@@ -66,7 +66,7 @@ function Contact() {
                                 />
                             </Stack>
                             <Button type="submit" variant="contained" disabled={isSending} sx={{ mt: 3, mb: 3 }}>
-                                {isSending ? 'Sending...' : 'I\'m Ready!'}
+                                {isSending ? 'Sending...' : 'Get in Touch'}
                             </Button>
                         </Box>
                     </Stack>
