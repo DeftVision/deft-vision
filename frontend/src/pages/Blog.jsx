@@ -93,7 +93,7 @@ export default function Blog() {
             </Helmet>
 
             <Box sx={{ py: 4, display: 'flex', justifyContent: 'center' }}>
-                <a href="/">
+                <a href="/frontend/public">
                     <img src="/images/DarkDeftVisionLogo.svg" alt="Deft Vision logo" style={{ height: 56 }} />
                 </a>
             </Box>
