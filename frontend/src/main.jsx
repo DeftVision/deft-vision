@@ -6,14 +6,17 @@ import {ThemeContextProvider} from './context/ThemeContext';
 import '@fontsource/poppins/600.css'; // Semi-bold
 import {HelmetProvider} from 'react-helmet-async';
 import {BrowserRouter as Router} from 'react-router-dom'
+import {AuthProvider} from "./context/AuthContext.jsx";
 
 createRoot(document.getElementById('root')).render(
     <StrictMode>
         <ThemeContextProvider>
             <HelmetProvider>
-                <Router>
-                    <AppRoutes/>
-                </Router>
+                <AuthProvider>
+                    <Router>
+                        <AppRoutes/>
+                    </Router>
+                </AuthProvider>
             </HelmetProvider>
         </ThemeContextProvider>
     </StrictMode>

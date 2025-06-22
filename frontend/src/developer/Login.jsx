@@ -1,5 +1,6 @@
 import { Box, Button, Container, TextField, Typography } from '@mui/material';
 import { useState, useEffect } from 'react';
+import { useAuth } from '../context/AuthContext'
 import {useNavigate} from "react-router-dom";
 
 const form_fields = {
@@ -10,6 +11,7 @@ const form_fields = {
 export function Login() {
     const [formData, setFormData] = useState(form_fields);
     const navigate = useNavigate();
+    const { login } = useAuth();
 
 
 
