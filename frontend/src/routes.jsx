@@ -4,6 +4,7 @@ import {Privacy, Terms } from './legal/index';
 import { Login, ManageBlog, ManageFaq} from './developer/index'
 import ScrollManager from './utils/ScrollManager'
 import { WebApp, Blog, Faq } from './pages/index'
+import PrivateRoute from "./utils/PrivateRoute.jsx";
 
 
 
@@ -17,8 +18,8 @@ export default function AppRoutes() {
                 <Route path="/" element={<App />} />
                 <Route path="/services/web-app" element={<WebApp /> } />
                 <Route path="/login" element={<Login /> } />
-                <Route path='/manage-blog' element={<ManageBlog /> } />
-                <Route path='/manage-faq' element={<ManageFaq /> } />
+                <Route path='/manage-blog' element={ <PrivateRoute> <ManageBlog /> </PrivateRoute> } />
+                <Route path='/manage-faq' element={ <PrivateRoute> <ManageFaq /> </PrivateRoute> } />
                 <Route path="/blog" element={<Blog /> } />
                 <Route path="/faq" element={<Faq /> } />
                 <Route path="/privacy" element={<Privacy />} />
