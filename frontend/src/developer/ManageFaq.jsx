@@ -1,4 +1,4 @@
-import {Box, Button, Container, TextField, Typography, FormControlLabel, Switch} from '@mui/material';
+import {Box, Button, Container, TextField, Typography } from '@mui/material';
 import {useState} from 'react'
 
 const form_fields = {
@@ -13,6 +13,12 @@ export default function ManageFaq() {
     return (
         <>
             <Container maxWidth="xs" sx={{mt: 8}}>
+                <Box sx={{ py: 4, display: 'flex', justifyContent: 'center' }}>
+                    <a href="/">
+                        <img src="/images/DarkDeftVisionLogo.svg" alt="Deft Vision logo" style={{ height: 56 }} />
+                    </a>
+                </Box>
+
                 <Box component='form'
                      // onSubmit={handleSubmit}
                      sx={{

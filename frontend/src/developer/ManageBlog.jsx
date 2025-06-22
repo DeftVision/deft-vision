@@ -1,9 +1,6 @@
-// TODO: ADD EXPIRE DATE/TIME FIELD
-// TODO: ADD PUBLISH DATE/TIME FIELD
-// DONE: ADD ARCHIVE SWITCH
-
 import {Box, Button, Container, TextField, Typography, FormControlLabel, Switch} from '@mui/material'
 import {useState} from 'react'
+import { BlogGrid } from './index'
 
 const form_fields = {
     blogTitle: '',
@@ -20,6 +17,12 @@ export default function ManageBlog() {
     return (
         <>
             <Container maxWidth="xs" sx={{mt: 8}}>
+                <Box sx={{ py: 4, display: 'flex', justifyContent: 'center' }}>
+                    <a href="/">
+                        <img src="/images/DarkDeftVisionLogo.svg" alt="Deft Vision logo" style={{ height: 56 }} />
+                    </a>
+                </Box>
+
                 <Box component='form'
                      // onSubmit={handleSubmit}
                      sx={{
@@ -81,6 +84,10 @@ export default function ManageBlog() {
                     />
 
                     <Button variant='outlined'>Submit</Button>
+                </Box>
+
+                <Box sx={{ mb: 5}}>
+                    <BlogGrid />
                 </Box>
             </Container>
         </>

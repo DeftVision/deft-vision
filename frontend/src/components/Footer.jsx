@@ -38,7 +38,7 @@ function Footer() {
                     <Stack direction="row" spacing={2} flexWrap="wrap" justifyContent="center">
                         <Link href="/terms" underline="hover" color="inherit">Terms of Service</Link>
                         <Link href="/privacy" underline="hover" color="inherit">Privacy Policy</Link>
-                        <Link href="/frontend/src/pages/Blog" underline="hover" color="inherit">Blog</Link>
+                        <Link href="/blog" underline="hover" color="inherit">Blog</Link>
                     </Stack>
 
 
