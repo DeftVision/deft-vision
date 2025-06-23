@@ -1,34 +1,45 @@
+const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const developerModel = require('../models/developerModel')
 
-
-exports .devLogin = async (req, res) => {
+exports.devLogin = async (req, res) => {
     try {
         const { email, password } = req.body;
-        if(!email || !password) {
-            return res.status(400).json({
-                message: 'Missing login credentials'
-            })
+
+        if (!email || !password) {
+            return res.status(400).json({ message: 'Missing login credentials' });
         }
 
         const developer = await developerModel
             .findOne({ email: { $regex: new RegExp("^" + email + "$", "i") } })
             .select("+password");
 
-        if(!developer) {
-            return res.status(400).json({ message: 'You shouldn\'t be here.' })
+        if (!developer) {
+            return res.status(400).json({ message: 'You shouldn\'t be here.' });
         }
-
-        console.log("Developer:", developer);
-        console.log("Password to compare:", password);
-
 
         const isMatch = await bcrypt.compare(password, developer.password);
-        if(!isMatch) {
-            return res.status(400).json({ message: 'try again'})
+        if (!isMatch) {
+            return res.status(400).json({ message: 'Try again' });
         }
 
-        res.status(200).json({ message: 'Login successful' });
+        // Generate JWT
+        const token = jwt.sign(
+            { id: developer._id },
+            process.env.JWT_SECRET,
+            { expiresIn: process.env.JWT_EXPIRATION || '7d' }
+        );
 
-    } catch (error) { res.status(500).json({ message: "Server error", error: error.message }); }
-}
+        // Don't return password
+        const { password: _, ...devInfo } = developer.toObject();
+
+        res.status(200).json({
+            message: 'Login successful',
+            token,
+            developer: devInfo
+        });
+
+    } catch (error) {
+        res.status(500).json({ message: "Server error", error: error.message });
+    }
+};
