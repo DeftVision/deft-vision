@@ -13,10 +13,6 @@ export function Login() {
     const navigate = useNavigate();
     const { login } = useAuth();
 
-    useEffect(() => {
-        localStorage.clear();
-    }, []);
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
