@@ -17,6 +17,10 @@ app.get("/api/status", (req, res) => {
     res.json({ status: "ok", message: "Backend is running successfully!" });
 });
 
+app.get('/api/test', (req, res) => {
+    res.send('Test route OK');
+});
+
 const PORT = process.env.PORT || 8001
 const HOST = process.env.HOST || "0.0.0.0";
 app.listen(PORT, HOST, () => {
