@@ -11,14 +11,14 @@ app.use(cors());
 
 
 app.use('/api', require('./routes/developerRoute'))
+console.log('Mounted /api routes');
+
+app.get('/api/test', (req, res) => res.send('API test OK'));
+
 
 // API Health Check
 app.get("/api/status", (req, res) => {
     res.json({ status: "ok", message: "Backend is running successfully!" });
-});
-
-app.get('/api/test', (req, res) => {
-    res.send('Test route OK');
 });
 
 const PORT = process.env.PORT || 8001
