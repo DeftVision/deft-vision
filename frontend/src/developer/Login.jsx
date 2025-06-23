@@ -39,7 +39,7 @@ export function Login() {
             login(data.token, data.developer);
 
             // Redirect to protected page
-            navigate('/dashboard'); // Change if your route is different
+            navigate('/'); // Change if your route is different
         } catch (error) {
             console.error('An error occurred during login', error);
         }
