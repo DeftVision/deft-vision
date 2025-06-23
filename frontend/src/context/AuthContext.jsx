@@ -22,13 +22,12 @@ export function AuthProvider({ children }) {
             setCurrentUser(storedCurrentUser || null);
         };
 
-        const storedCurrentUser = parseJSON(localStorage.getItem('currentUser'));
-        setIsAuthenticated(!!localStorage.getItem('token'));
-        setCurrentUser(storedCurrentUser || null);
+        handleStorageChange(); // Call once on mount
 
         window.addEventListener('storage', handleStorageChange);
         return () => window.removeEventListener('storage', handleStorageChange);
     }, []);
+
 
     const login = (token, currentUserData) => {
         localStorage.setItem('token', token);
