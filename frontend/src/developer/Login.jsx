@@ -27,20 +27,25 @@ export function Login() {
                 headers: { 'Content-Type': 'application/json' },
             });
 
-            const _response = await response.json();
-            console.log('Raw response:', _response); // 👈 add this
+            const data = await response.json();
+            console.log('Raw response:', data);
 
             if (!response.ok) {
-                console.error(_response.message || 'Login failed');
+                console.error(data.message || 'Login failed');
                 return;
             }
 
-            localStorage.setItem('token', _response.token);
-            localStorage.setItem('currentUser', JSON.stringify(_response.developer));
+            // Call login method from AuthContext
+            login(data.token, data.developer);
+
+            // Redirect to protected page
+            navigate('/dashboard'); // Change if your route is different
         } catch (error) {
             console.error('An error occurred during login', error);
         }
     };
+
+
 
 
     return (
