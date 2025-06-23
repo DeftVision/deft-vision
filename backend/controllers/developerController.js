@@ -12,7 +12,7 @@ exports.devLogin = async (req, res) => {
 
         const developer = await developerModel
             .findOne({ email: { $regex: new RegExp("^" + email + "$", "i") } })
-            .select('+password');
+            .select("+password");
 
         if (!developer) {
             return res.status(400).json({ message: 'You shouldn\'t be here.' });
@@ -29,6 +29,7 @@ exports.devLogin = async (req, res) => {
             { expiresIn: process.env.JWT_EXPIRATION || '7d' }
         );
 
+        // Exclude password from response
         const { password: _, ...devInfo } = developer.toObject();
 
         return res.status(200).json({
