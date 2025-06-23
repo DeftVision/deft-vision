@@ -166,7 +166,7 @@ export default function Blog() {
                             <Typography variant="h6">
                                 Ready to turn your website into your best sales tool?
                             </Typography>
-                            <Button variant="contained" size="large" href="/contact" sx={{ backgroundColor: '#3DAD4F', '&:hover': { backgroundColor: '#36a343' } }}>
+                            <Button variant="contained" size="large" href="/#contact" sx={{ backgroundColor: '#3DAD4F', '&:hover': { backgroundColor: '#36a343' } }}>
                                 Let's Build It Together
                             </Button>
                         </Stack>
