@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const developerModel = require('../models/developerModel')
+const developerModel = require('../models/developerModel');
 
 exports.devLogin = async (req, res) => {
     try {
@@ -12,7 +12,7 @@ exports.devLogin = async (req, res) => {
 
         const developer = await developerModel
             .findOne({ email: { $regex: new RegExp("^" + email + "$", "i") } })
-            .select("+password");
+            .select('+password');
 
         if (!developer) {
             return res.status(400).json({ message: 'You shouldn\'t be here.' });
@@ -23,23 +23,24 @@ exports.devLogin = async (req, res) => {
             return res.status(400).json({ message: 'Try again' });
         }
 
-        // Generate JWT
         const token = jwt.sign(
             { id: developer._id },
             process.env.JWT_SECRET,
             { expiresIn: process.env.JWT_EXPIRATION || '7d' }
         );
 
-        // Don't return password
         const { password: _, ...devInfo } = developer.toObject();
 
-        res.status(200).json({
+        return res.status(200).json({
             message: 'Login successful',
             token,
-            developer: devInfo
+            developer: devInfo,
         });
 
     } catch (error) {
-        res.status(500).json({ message: "Server error", error: error.message });
+        return res.status(500).json({
+            message: "Server error",
+            error: error.message
+        });
     }
 };
