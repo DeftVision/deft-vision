@@ -20,31 +20,28 @@ export function Login() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log('API URL:', import.meta.env.VITE_API_URL)
-
         try {
             const response = await fetch(`${import.meta.env.VITE_API_URL}/api/login`, {
                 method: 'POST',
                 body: JSON.stringify(formData),
-                headers:{ 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'application/json' },
             });
 
-            if(!response.ok) {
-                const errorResponse = await response.json();
-                console.error(errorResponse.message || 'Login failed')
+            const _response = await response.json();
+            console.log('Raw response:', _response); // 👈 add this
+
+            if (!response.ok) {
+                console.error(_response.message || 'Login failed');
                 return;
             }
 
-            const _response = await response.json();
             localStorage.setItem('token', _response.token);
-
-            login(_response.token, _response.developer);
-            navigate('/')
-
+            localStorage.setItem('currentUser', JSON.stringify(_response.developer));
         } catch (error) {
-            console.log('An error occurred during login')
+            console.error('An error occurred during login', error);
         }
     };
+
 
     return (
         <Container maxWidth="xs" sx={{mt: 8}}>
