@@ -19,7 +19,8 @@ export default function Hero() {
         <Box
             sx={{
                 minHeight: '100vh',
-                backgroundImage: 'url(/images/hero-green.png)',
+                backgroundColor: '#498052',
+                backgroundImage: 'url(/images/hero-green.webp)',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center 40%',
                 backgroundRepeat: 'no-repeat',
