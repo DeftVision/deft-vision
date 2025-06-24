@@ -44,10 +44,10 @@ const services = [
         price: '',
         description: 'Whether you\'re managing your own account or need help getting started, your site will be ready to launch.',
         details: [
-            'Domain connection and HTTPS setup included',
-            'Works with modern platforms that support static or app hosting',
-            'Custom features like forms or logins supported',
-            'Hosting available if you prefer it fully managed',
+            'Custom domain connection',
+            'HTTPS included for site security',
+            'No-cost hosting options available',
+            'Fully managed plans if you want us to handle it'
         ],
     },
 ];
