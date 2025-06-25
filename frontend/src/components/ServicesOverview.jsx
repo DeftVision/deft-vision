@@ -44,10 +44,10 @@ const services = [
         price: '',
         description: 'Whether you\'re managing your own account or need help getting started, your site will be ready to launch.',
         details: [
-            'Custom domain connection',
-            'HTTPS included for site security',
-            'No-cost hosting options available',
-            'Fully managed plans if you want us to handle it'
+            'Support to obtain, transfer or manage your domain',
+            'Deploy to the hosting provider who meets your needs',
+            'Configure the domain security certificate',
+            'Manage your site for you on our infrastructure',
         ],
     },
 ];
@@ -104,11 +104,38 @@ export default function ServicesSection() {
                             <Collapse in={expanded[index]}>
                                 <Box sx={{ mt: 2 }}>
                                     {service.details.map((item, i) => (
-                                        <Box key={i} sx={{ display: 'flex', alignItems: 'flex-start', mb: 1 }}>
-                                            <CheckCircleOutlineIcon fontSize="small" color="primary" sx={{ mt: '2px', mr: 1 }} />
-                                            <Typography variant="body2">{item}</Typography>
+                                        <Box
+                                            key={i}
+                                            sx={{
+                                                display: 'flex',
+                                                alignItems: 'flex-start',
+                                                mb: 1.5,
+                                            }}
+                                        >
+                                            <Box
+                                                component="span"
+                                                sx={{
+                                                    mt: '4px',
+                                                    mr: 1.5,
+                                                    flexShrink: 0,
+                                                }}
+                                            >
+                                                <CheckCircleOutlineIcon fontSize="small" color="primary" />
+                                            </Box>
+                                            <Typography
+                                                variant="body2"
+                                                sx={{
+                                                    textAlign: 'left',
+                                                    lineHeight: 1.6,
+                                                }}
+                                            >
+                                                {item}
+                                            </Typography>
                                         </Box>
                                     ))}
+
+
+
                                 </Box>
                             </Collapse>
 
