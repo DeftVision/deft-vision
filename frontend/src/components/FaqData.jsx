@@ -1,19 +1,15 @@
 const faqData = [
     {
         question: "Do I own my website?",
-        answer: "Yes. You fully own your code, content, and domain. There are no licenses, no subscriptions, and no platforms locking you in.",
+        answer: "Yes. You own your frontend code (the website part), content, data, and domain. There are a few different ways the code can be transferred to you, and we'll use the one you would like.",
     },
     {
         question: "What if I don’t know how to update code?",
-        answer: "You don’t need to. Your site is built to be stable and future-proof, and you can always ask for help if you want to make updates or changes later.",
+        answer: "You don’t need to. Your site is built to be stable and easily configurable. When your code is delivered we will walk you through how to make changes on your own, or we can make the changes for you.",
     },
     {
         question: "Where is my site hosted?",
-        answer: "That depends on your setup. You can host it on a modern platform or with help through a managed setup. We'll recommend the best option based on your project.",
-    },
-    {
-        question: "Do you use templates or page builders?",
-        answer: "No. Each project is built from scratch based on your needs. The layout and design are yours, not a theme copy.",
+        answer: "That depends on your setup. You can host it on a modern platform or with help through a managed setup. We'll recommend the best option based on your project or you can host it on our cloud infrastructure.",
     },
     {
         question: "Can I make changes after launch?",
@@ -21,7 +17,7 @@ const faqData = [
     },
     {
         question: "What’s included with a starter site?",
-        answer: "A ready-to-launch website with responsive design and space to grow.",
+        answer: "A professional business single page application, designed to reflect your branding.",
     },
     {
         question: "What happens after launch?",
@@ -37,19 +33,19 @@ const faqData = [
     },
     {
         question: "What do you need from me to get started?",
-        answer: "At minimum, I’ll need your logo (if you have one), the content for each page, and your preferred contact details. If you have colors, photos, or any other branding assets, send those too.",
+        answer: "At minimum, we’ll need your logo (if you have one), the content for each page, and your preferred contact details. If you have colors, photos, or any other branding assets, send those too.",
     },
     {
         question: "What if I need more pages later?",
         answer: "That’s no problem. Your site is built to grow. You can add pages, features, or integrations whenever you're ready.",
     },
     {
-        question: "Do you offer support after launch?",
-        answer: "Yes. If you need updates, edits, or help down the line, just reach out. Ongoing support is available if you want it, but not required.",
+        question: "Do you offer refunds?",
+        answer: "Unfortunately no, there are no refunds.",
     },
     {
-        question: "Can you help with forms?",
-        answer: "Yes. If your site needs a contact form or similar tools, I’ll set that up or recommend simple services that fit.",
+        question: "What if I need a form for my customers to complete?",
+        answer: "We can build that too. We'll get the specifics from you and make it happen.",
     },
     {
         question: "Still have questions?",
