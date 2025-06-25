@@ -49,7 +49,7 @@ const faqData = [
     },
     {
         question: "Still have questions?",
-        answer: "Send a message to questions@deftvision.com or drop your question in the form below. I’ll get back to you soon.",
+        answer: "Send a message to questions@deftvision.com."
     },
 ];
 
