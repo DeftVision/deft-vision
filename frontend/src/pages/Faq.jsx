@@ -9,6 +9,11 @@ export default function FAQ() {
     return (
         <>
             <Container maxWidth="md" sx={{ py: 6 }}>
+                <Box sx={{ py: 4, display: 'flex', justifyContent: 'center' }}>
+                    <a href="/">
+                        <img src="/images/DarkDeftVisionLogo.svg" alt="Deft Vision logo" style={{ height: 56 }} />
+                    </a>
+                </Box>
                 <Typography variant="h4" component="h1" gutterBottom>
                     Frequently Asked Questions
                 </Typography>

@@ -39,6 +39,7 @@ function Footer() {
                         <Link href="/terms" underline="hover" color="inherit">Terms of Service</Link>
                         <Link href="/privacy" underline="hover" color="inherit">Privacy Policy</Link>
                         <Link href="/blog" underline="hover" color="inherit">Blog</Link>
+                        <Link href="/faq" underline="hover" color="inherit">FAQ</Link>
                     </Stack>
 
 
