@@ -3,9 +3,10 @@ import {
     Box,
     Container,
     Typography,
-    Button
+    Button, Stack
 } from '@mui/material';
-import { Footer } from "../components/index.js";
+
+import { Footer, EarlyAdoptContactForm } from "../components/index.js";
 import BackToTop from "../layouts/BackToTop.jsx";
 
 export default function MentalHealth() {
@@ -19,25 +20,27 @@ export default function MentalHealth() {
                         </a>
                     </Box>
 
-                    <Typography variant="h4" gutterBottom>
-                        Modern EMR/EHR Software for Mental Health Professionals
-                    </Typography>
+                    <Stack spacing={2}>
+                        <Typography variant="h4" gutterBottom>
+                            Modern EMR/EHR Software for Mental Health Professionals
+                        </Typography>
 
-                    <Typography variant="body1" paragraph>
-                        <strong>Deft Therapy</strong> is software currently in development, built specifically for therapists, counselors, and mental health professionals.
-                    </Typography>
+                        <Typography variant="body1">
+                            <strong>Deft Therapy</strong> is software currently in development, built specifically for therapists, counselors, and mental health professionals.
+                        </Typography>
 
-                    <Typography variant="body1" paragraph>
-                        The goal is to create an affordable, secure, and intuitive system with the tools you need to manage a practice of any size.
-                    </Typography>
+                        <Typography variant="body1">
+                            The goal is to create an affordable, secure, and intuitive system with the tools you need to manage a practice of any size.
+                        </Typography>
 
-                    <Typography variant="body1" paragraph>
-                        Several core features are already in place. To ensure the software truly supports your workflow and helps make your practice more efficient, cost-effective, and easier to run, we are gathering feedback from clinicians who use this kind of software every day.
-                    </Typography>
+                        <Typography variant="body1">
+                            Several core features are already in place. To ensure the software truly supports your workflow and helps make your practice more efficient, cost-effective, and easier to run, we are gathering feedback from clinicians who use this kind of software every day.
+                        </Typography>
 
-                    <Typography variant="body1" paragraph>
-                        This is your opportunity to help shape something better from the beginning.
-                    </Typography>
+                        <Typography variant="body1">
+                            This is your opportunity to help shape something better from the beginning.
+                        </Typography>
+                    </Stack>
 
                     <Box sx={{ mt: 4 }}>
                         <Button
@@ -59,11 +62,14 @@ export default function MentalHealth() {
                     <Typography variant="caption" color="text.secondary" sx={{ mt: 2, display: 'block' }}>
                         No spam. No sales pitch. Just building something better with your input.
                     </Typography>
+
                 </Container>
             </Box>
+            <EarlyAdoptContactForm />
 
             <Footer />
             <BackToTop />
         </>
     );
 }
+
