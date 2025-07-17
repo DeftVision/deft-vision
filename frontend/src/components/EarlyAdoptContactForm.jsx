@@ -2,36 +2,35 @@ import { Box, Stack, Typography, TextField, Button, Container} from '@mui/materi
 import emailjs from '@emailjs/browser';
 
 import { useState } from 'react';
-import { sendContactForm } from '../utils/emailService';
+import { sendEarlyAccessForm } from '../utils/emailService';
 
 export default function EarlyAdoptContactForm() {
     const [isSending, setIsSending] = useState(false);
 
-    const sendEmail = (e) => {
+    const sendEmail = async (e) => {
         e.preventDefault();
         setIsSending(true);
 
         // Honeypot check
-        if (e.target.website.value) {
+        if (e.target.EMR.value) {
             setIsSending(false);
             return;
         }
 
-        sendContactForm(e.target).then(
-            (result) => {
-                console.log('Email sent!', result.text);
-                alert("Thank you! Your message has been sent.");
-                setIsSending(false);
-            },
-            (error) => {
-                console.error('Email failed:', error.text);
-                alert("Oops, something went wrong. Please try again.");
-                setIsSending(false);
-            }
-        );
-
-        e.target.reset(); // Clear the form after sending
+        try {
+            const result = await sendEarlyAccessForm(e.target);
+            console.log('Email sent!', result);
+            alert("Thank you! Your message has been sent.");
+        } catch (error) {
+            console.error("Email failed:", JSON.stringify(error, null, 2));
+            console.error("Email failed:", error?.text || error);
+            alert("Oops, something went wrong. Please try again.");
+        } finally {
+            setIsSending(false);
+            e.target.reset(); // Clear the form after sending
+        }
     };
+
 
     return (
         <Box id='contact' sx={{ my: 8 }}>
@@ -44,7 +43,7 @@ export default function EarlyAdoptContactForm() {
             >
                 <Container maxWidth='sm'>
                     <Stack spacing={2}>
-                        <Typography variant="h5" component='h2'>Be the first to test drive!</Typography>
+                        <Typography variant="h5" component='h2'>Be the first to use Deft Therapy!</Typography>
 
                         <Typography variant="body2" color="text.secondary">
                             If you want to be one of the first users, drop your info below.
