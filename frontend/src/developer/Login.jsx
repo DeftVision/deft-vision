@@ -1,5 +1,5 @@
 import { Box, Button, Container, TextField, Typography } from '@mui/material';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useAuth } from '../context/AuthContext'
 import {useNavigate} from "react-router-dom";
 
@@ -31,11 +31,11 @@ export function Login() {
                 return;
             }
 
-            // Call login method from AuthContext
+            // Call the login method from AuthContext
             login(data.token, data.developer);
 
             // Redirect to protected page
-            navigate('/'); // Change if your route is different
+            navigate('/');
         } catch (error) {
             console.error('An error occurred during login', error);
         }

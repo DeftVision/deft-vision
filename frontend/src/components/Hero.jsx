@@ -1,4 +1,4 @@
-import { Box, Typography, Button } from '@mui/material';
+import {Box, Typography, Button, Stack} from '@mui/material';
 import { motion } from 'framer-motion';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
@@ -49,7 +49,7 @@ export default function Hero() {
                         src="/images/DeftVisionLogo.svg"
                         alt="Deft Vision Logo"
                         sx={{
-                            height: 72,
+                            height: 110,
                             width: 'auto',
                             display: 'block',
                         }}
@@ -108,25 +108,46 @@ export default function Hero() {
                             mb: { xs: 6, md: 0 },
                         }}
                     >
-                        <Button
-                            variant="contained"
-                            size="large"
-                            href="#contact"
-                            sx={{
-                                backgroundColor: '#F06449',
-                                color: '#fff',
-                                px: 4,
-                                fontWeight: 500,
-                                textTransform: 'none',
-                                borderRadius: 2,
-                                boxShadow: '0 4px 12px rgba(240, 100, 73, 0.35)',
-                                '&:hover': {
-                                    backgroundColor: '#C54B35',
-                                },
-                            }}
-                        >
-                            Start My Project
-                        </Button>
+                        <Stack spacing={2} direction='row'>
+                            <Button
+                                variant="contained"
+                                size="large"
+                                href="#contact"
+                                sx={{
+                                    backgroundColor: '#F06449',
+                                    color: '#fff',
+                                    px: 4,
+                                    fontWeight: 500,
+                                    textTransform: 'none',
+                                    borderRadius: 2,
+                                    boxShadow: '0 4px 12px rgba(240, 100, 73, 0.35)',
+                                    '&:hover': {
+                                        backgroundColor: '#C54B35',
+                                    },
+                                }}
+                            >
+                                Start My Project
+                            </Button>
+                            <Button
+                                variant="contained"
+                                size="large"
+                                href="/mentalhealth"
+                                sx={{
+                                    backgroundColor: '#FFF',
+                                    color: '#F06449',
+                                    px: 4,
+                                    fontWeight: 500,
+                                    textTransform: 'none',
+                                    borderRadius: 2,
+                                    boxShadow: '0 4px 12px rgba(240, 100, 73, 0.35)',
+                                    '&:hover': {
+                                        backgroundColor: '#ddd',
+                                    },
+                                }}
+                            >
+                                Mental Health Professionals
+                            </Button>
+                        </Stack>
                     </Box>
                     <Box
                         sx={{
