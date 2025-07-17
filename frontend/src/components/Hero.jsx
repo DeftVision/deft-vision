@@ -108,7 +108,11 @@ export default function Hero() {
                             mb: { xs: 6, md: 0 },
                         }}
                     >
-                        <Stack spacing={2} direction='row'>
+                        <Stack
+                            spacing={2}
+                            direction={{ xs: 'column', sm: 'row' }}
+                            sx={{ width: '100%', alignItems: { xs: 'center', sm: 'flex-start' } }}
+                        >
                             <Button
                                 variant="contained"
                                 size="large"
