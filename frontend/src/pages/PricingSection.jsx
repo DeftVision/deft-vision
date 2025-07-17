@@ -30,7 +30,7 @@ export default function PricingSection() {
             </Stack>
 
             <Button variant="contained" href="/#contact">
-                Start My Project
+                Start it up
             </Button>
         </Box>
     );
