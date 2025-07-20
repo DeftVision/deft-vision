@@ -1,6 +1,7 @@
 import { Box, Button, Container, Stack, Typography } from '@mui/material';
 import { Footer } from '../components/index.js';
 import BackToTop from '../layouts/BackToTop.jsx';
+import Layout from '../layouts/Layout.jsx';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { useEffect } from 'react';
@@ -72,7 +73,7 @@ const sections = [
     },
 ];
 
-export default function Blog() {
+function BlogContent() {
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -177,5 +178,13 @@ export default function Blog() {
             <Footer />
             <BackToTop />
         </>
+    );
+}
+
+export default function Blog() {
+    return (
+        <Layout>
+            <BlogContent />
+        </Layout>
     );
 }
