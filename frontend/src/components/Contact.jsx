@@ -65,7 +65,12 @@ function Contact() {
                                     required
                                 />
                             </Stack>
-                            <Button type="submit" variant="contained" disabled={isSending} sx={{ mt: 3, mb: 3 }}>
+                            <Button
+                                type="submit"
+                                variant="contained"
+                                disabled={isSending}
+                                sx={{ mt: 3, mb: 3 }}
+                            >
                                 {isSending ? 'Sending...' : 'Get in Touch'}
                             </Button>
                         </Box>

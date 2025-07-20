@@ -8,8 +8,9 @@ import {
 
 import { Footer, EarlyAdoptContactForm } from "../components/index.js";
 import BackToTop from "../layouts/BackToTop.jsx";
+import Layout from "../layouts/Layout.jsx";
 
-export default function MentalHealth() {
+function MentalHealthContent() {
     return (
         <>
             <Box sx={{ bgcolor: '#ffffff', py: { xs: 8, sm: 10 } }}>
@@ -71,5 +72,13 @@ export default function MentalHealth() {
             <BackToTop />
         </>
     );
+}
+
+export default function MentalHealth() {
+    return (
+        <Layout>
+            <MentalHealthContent />
+        </Layout>
+    )
 }
 

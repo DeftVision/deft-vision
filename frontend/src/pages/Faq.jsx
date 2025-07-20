@@ -2,10 +2,11 @@ import React from 'react';
 import { Box, Container, Divider, Typography } from '@mui/material';
 import { Footer, FaqData as faqData} from "../components/index";
 import BackToTop from "../layouts/BackToTop";
+import Layout from "../layouts/Layout";
 
 
 
-export default function FAQ() {
+function FAQContent() {
     return (
         <>
             <Container maxWidth="md" sx={{ py: 6 }}>
@@ -37,5 +38,13 @@ export default function FAQ() {
             <Footer />
             <BackToTop/>
         </>
+    );
+}
+
+export default function FAQ() {
+    return (
+        <Layout>
+            <FAQContent />
+        </Layout>
     );
 }
